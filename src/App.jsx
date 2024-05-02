@@ -1,7 +1,13 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 function App() {
-  return <div className="text-3xl  text-white bg-slate-950">App</div>;
+  return (
+    <div>
+      <Button>Click Me</Button>
+      <Button variant="outline">Outline</Button>
+    </div>
+  );
 }
 
 export default App;
