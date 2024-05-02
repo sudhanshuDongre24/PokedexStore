@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div>
-      <Button>Click Me</Button>
-      <Button variant="outline">Outline</Button>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
