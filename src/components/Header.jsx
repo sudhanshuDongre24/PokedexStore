@@ -15,7 +15,7 @@ function Header() {
     }, 1000);
   }
   return (
-    <header className="fixed py-3 w-full bg-gray-500">
+    <header className="fixed  py-3 w-full bg-gray-500">
       <Container>
         <nav className="flex justify-between content-center">
           <div className="my-auto">
