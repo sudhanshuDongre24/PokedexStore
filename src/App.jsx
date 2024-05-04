@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import Header from "./components/Header";
-import Card from "./components/Card";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import Input from "./components/Input";
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      <SignIn />
+      <div className="bg-[rgb(29,29,29)] min-h-screen text-white">
+        <div className="relative">
+          <Header />
+        </div>
+      </div>
     </>
   );
 }
