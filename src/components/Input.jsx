@@ -21,18 +21,19 @@ function Input({
   type = "text",
   onChange = "",
   className = "",
+  width = "",
   ...props
 }) {
   return (
     <div className="flex flex-col gap-2  ">
-      <div className="flex  item-center justify-between mb-2">
+      <div className="flex item-center justify-between mt-5">
         {label && (
           <label className="font-bold" htmlFor={label}>
             {label}
           </label>
         )}
         {type.toLowerCase() == "password" && (
-          <label className="text-blue-600">
+          <label className="text-blue-400 hover:text-blue-600">
             <a href="">Forget Password?</a>
           </label>
         )}
@@ -42,7 +43,8 @@ function Input({
         id={label}
         type={type}
         onChange={onChange}
-        className={`bg-[rgb(29,29,29)] h-10 px-3 py-2 text-white border-white border-[1px] rounded focus-visible:outline-none focus-visible:outline-[rgb(223,224,222)] ${className}`}
+        style={{ width: width }}
+        className={`bg-black h-10  px-3 py-2 text-white focus:border-[#ff90e8] border-[1px] focus:border-2 rounded focus-visible:outline-none focus-visible:outline-none ${className}`}
       />
     </div>
   );
