@@ -40,7 +40,7 @@ function SignIn() {
           </div>
 
           <div className="mt-6">
-            <Button className="w-[400px] bg-white hover:bg-[#ff90e8] text-black h-[45px] ">
+            <Button className="w-[400px] bg-white hover:bg-[#ff90e8] text-black h-[45px] font-semibold ">
               LogIn
             </Button>
           </div>
