@@ -22,20 +22,20 @@ function SignIn() {
           </div>
 
           {/* Inout Section*/}
-          <div>
+          <div className="flex flex-col gap-5">
             <Input
               label="Email"
               type="email"
               placeholder="Enter your Email Address..."
               width="400px"
-              className="whiteShadow"
+              className="whiteShadow focus:border-[#ffc900]"
             />
 
             <Input
               label="Password"
               type="password"
               placeholder="Enter your Password..."
-              className="whiteShadow focus:border-red-500"
+              className="whiteShadow focus:border-[#ffc900]"
             />
           </div>
 

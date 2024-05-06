@@ -7,12 +7,10 @@ function Header() {
   return (
     <header className="w-full p-9 bg-inherit  border-b-[rgba(221,221,221,0.35)]  border-solid border-b-[0.0625rem] sticky top-0 z-50">
       <Container>
-        <nav className="flex justify-between flex-col sm:flex-row items-center z-10">
+        <nav className="flex justify-between  flex-col sm:flex-row items-center z-10">
           {/* Logo Section */}
           <div className="flex items-center gap-[20px]  w-full justify-between sm:w-fit">
-            <h1 className=" text-2xl sm:text-3xl ml-[-20px] sm:ml-0">
-              POKEMON
-            </h1>
+            <h1 className=" text-2xl sm:text-3xl sm:ml-0">POKEMON</h1>
             {/* Hidden Button Section */}
             <div className="block sm:hidden">
               <Button
@@ -23,14 +21,13 @@ function Header() {
               </Button>
             </div>
           </div>
-
           {/* InputSeacrch Section not working*/}
-          {/*           <div className="">
-            <InputSearch width="" />
+          <div className="w-full mx-4 mt-5 sm:mt-0">
+            <InputSearch className="" />
           </div>
- */}
+
           {/* Button Section */}
-          <div className="hidden sm:block">
+          <div className="hidden sm:flex ml-2 w-fit ">
             <Button
               className="hover:bg-black hover:text-white"
               onClick={() => console.log("clicked")}

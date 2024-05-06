@@ -10,7 +10,7 @@ function App() {
   };
   return (
     <>
-      <div className="bg-[#242423] min-h-screen  text-white">
+      <div className="bg-[#242423] min-h-screen  text-white ">
         <Header />
         <SignIn />
         {/* 

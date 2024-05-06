@@ -1,6 +1,6 @@
 import Input from "./Input";
 
-function InputSearch({ width }) {
+function InputSearch({ width, className }) {
   function modelToggle(e) {
     if (e.target.value == "") {
       document.getElementById("searchContainer").classList.add("hidden");
@@ -8,39 +8,33 @@ function InputSearch({ width }) {
       document.getElementById("searchContainer").classList.remove("hidden");
     }
   }
-  let rightValue = "";
-  for (let i = 0; i < width.length; i++) {
-    if (isNaN(Number(width[i]))) break;
-
-    rightValue += width[i];
-  }
-  rightValue = -Number(rightValue) / 2;
 
   return (
-    <div className="">
-      <div className="flex justify-center items-center flex-col">
-        <div className="relative ">
-          <Input width={width} onChange={modelToggle} className="h-[52px]" />
-          <img
-            className="w-12 absolute top-6 right-1"
-            src="/public/icons/search.svg"
-            alt=""
-          />
-        </div>
+    <div className="relative mt-0">
+      <Input onChange={modelToggle} className="whiteShadow" />
+      <img
+        className="w-8 absolute top-1 right-6"
+        src="/public/icons/search.svg"
+        alt=""
+      />
 
-        <div id="searchContainer" className="hidden relative ">
-          <div
-            className="mt-2 bg-[rgba(29,29,29,0.9)] border-white border-2 h-fit pb-10 rounded p-4 absolute animate-accordion-down "
-            style={{ width: width, right: rightValue }}
-          >
-            <h1>Hello world</h1>
-            <h1>Hello world</h1>
-            <h1>Hello world</h1>
-            <h1>Hello world</h1>
-            <hr />
-            <h1>Hello world</h1>
-          </div>
-        </div>
+      <div
+        id="searchContainer"
+        className="absolute whiteShadow pb-4 mt-3 border-2 hidden w-full bg-[rgba(29,29,29,0.9)] rounded border-[rgba(221,221,221,0.35)] animate-accordion-down "
+      >
+        <h1
+          className="hover:bg-white py-2 mb-2
+         hover:text-black"
+        >
+          Hello
+        </h1>
+        <hr />
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
+        <h1 className="hover:bg-white py-2 hover:text-black">Hello</h1>
       </div>
     </div>
   );

@@ -19,21 +19,21 @@ function Input({
   label = "",
   placeholder = "",
   type = "text",
-  onChange = "",
+  onChange,
   className = "",
   width = "",
   ...props
 }) {
   return (
-    <div className="flex flex-col gap-2  ">
-      <div className="flex item-center justify-between mt-5">
+    <div className="flex flex-col ">
+      <div className="flex item-center justify-between">
         {label && (
-          <label className="font-bold" htmlFor={label}>
+          <label className="font-bold my-3" htmlFor={label}>
             {label}
           </label>
         )}
         {type.toLowerCase() == "password" && (
-          <label className="text-blue-400 hover:text-blue-600">
+          <label className="text-blue-400 my-3 hover:text-blue-600">
             <a href="">Forget Password?</a>
           </label>
         )}
