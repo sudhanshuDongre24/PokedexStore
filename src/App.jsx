@@ -2,7 +2,8 @@ import Header from "./components/Header";
 import Input from "./components/Input";
 import InputSearch from "./components/InputSearch";
 import "./App.css";
-import SignIn from "./components/SignIn";
+import Login from "./components/LoginPage";
+import Signin from "./components/SigninPage";
 
 function App() {
   const logChange = (e) => {
@@ -12,7 +13,8 @@ function App() {
     <>
       <div className="bg-[#242423] min-h-screen  text-white ">
         <Header />
-        <SignIn />
+        {/* <Login /> */}
+        <Signin />
         {/* 
         <div>
           <h1>helo1</h1>

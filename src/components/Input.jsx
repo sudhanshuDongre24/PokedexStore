@@ -45,6 +45,7 @@ function Input({
         onChange={onChange}
         style={{ width: width }}
         className={`bg-black h-10  px-3 py-2 text-white focus:border-[#ff90e8] border-[1px] focus:border-2 rounded focus-visible:outline-none ${className}`}
+        {...props}
       />
     </div>
   );
