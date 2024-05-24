@@ -13,3 +13,29 @@ body {
   clip-path: polygon(100% 0, 75% 50%, 100% 100%, 0 100%, 0 0);
   background: red;
 }
+
+.spinner_container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
+
+.spinner {
+  border: 6px solid rgba(221, 221, 221.35);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

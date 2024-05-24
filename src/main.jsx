@@ -3,7 +3,7 @@ import ReactDOM, { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, ProductPage } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 
@@ -15,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/pokemon/:id",
+        element: <ProductPage />,
       },
     ],
   },
