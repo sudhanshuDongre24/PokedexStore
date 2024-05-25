@@ -1,7 +1,6 @@
 const conf = {
-  appWriteUrl: String(import.meta.env.VITE_APPWRITE_URL),
-  appWriteProjectId: String(import.meta.env.VITE_APPWRITE_PROJECT_ID),
-  appWriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
+  supaBaseUrl: String(import.meta.env.VITE_SUPABASE_URL),
+  supaBaseAnonKey: String(import.meta.env.VITE_SUPABASE_ANON_KEY),
 };
 
 export default conf;
