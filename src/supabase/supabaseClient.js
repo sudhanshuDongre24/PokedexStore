@@ -1,8 +1,18 @@
 import { createClient } from "@supabase/supabase-js";
+import conf from "../conf/conf";
+export class Supabase {
+  supabase;
+  client = createClient;
+  constructor() {
+    this.supabase = this.client(conf.supaBaseUrl, conf.supaBaseAnonKey);
+  }
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  add() {
+    console.log(this.supabase);
+  }
+}
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseService = new Supabase();
+supabaseService.add();
 
-export default supabase;
+export default supabaseService;
