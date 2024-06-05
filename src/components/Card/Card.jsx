@@ -4,19 +4,21 @@ import { useNavigate } from "react-router-dom";
 
 function Card({ id, name, type }) {
   const navigate = useNavigate();
-  ImageLoader("/loader.svg", 200);
+  ImageLoader("/pngegg.png", 200);
   return (
     <div
-      className="border-[0.0625rem] rounded border-[rgba(221,221,221,0.35)] bg-black border-solid w-fit"
+      className="border-[0.0625rem] rounded border-[rgba(221,221,221,1)] bg-black border-solid w-fit whiteShadow"
       onClick={() => navigate(`pokemon/${id}`)}
     >
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-        alt=""
-        className="bg-[rgb(221,221,221,0.35)] w-[200px] mx-auto p-6"
-        spinner="true"
-        fadein="true"
-      />
+      <div className="">
+        <img
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+          alt=""
+          className="w-[210px] mx-auto p-6 z-50 bg-red-800"
+          spinner="true"
+          fadein="true"
+        />
+      </div>
 
       <hr className="border-[rgb(221,221,221)] border-[0.0625rem] border-solid" />
       <h2 className="text-lg mt-4 mb-5 pl-2">{name}</h2>

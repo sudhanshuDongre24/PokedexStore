@@ -31,18 +31,8 @@ export default function InfiniteScrollComponent({ pokemon }) {
   }
 
   return (
-    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-3 items-center mb-11">
+    <ul className="grid grid-cols-1 gap-[60px] sm:grid-cols-2 lg:grid-cols-3 mt-4 items-center mb-11">
       {cards}
     </ul>
   );
 }
-
-/*  <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-3 items-center">
-  {cards}
-</ul>
-
-
-  <li className="mx-auto" key={pokemon.id}>
-          <Card {...pokemon} />
-        </li>
-*/
