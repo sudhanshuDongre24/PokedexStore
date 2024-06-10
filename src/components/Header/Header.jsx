@@ -5,12 +5,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [showContainer, setShowContainer] = useState(false);
   let isHomePage;
   if (location.pathname.includes("/pokemon")) {
     isHomePage = false;
   } else {
     isHomePage = true;
   }
+
+  function closeDialogBox() {}
 
   return (
     <header
@@ -31,15 +34,21 @@ function Header() {
           >
             Pokemon
           </h1>
-          {/* 
-          <div
-          id="overlay"
-            className="bg-black absolute top-0 w-full left-0 h-screen z-[5]"
-            onClick={() => console.log("yes")}
-          ></div> */}
+
+          {showContainer && (
+            <div
+              id="overlay"
+              className="bg-black absolute top-0 w-full left-0 h-screen z-[5] "
+              onClick={() => setShowContainer(false)}
+            ></div>
+          )}
+
           {/* Input field */}
           <div className="w-full mx-4 z-50">
-            <InputSearch />
+            <InputSearch
+              setShowContainer={setShowContainer}
+              showContainer={showContainer}
+            />
           </div>
 
           {/* Button Section */}

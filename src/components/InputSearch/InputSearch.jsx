@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import Input from "../Input/Input";
 
-function InputSearch() {
-  const [showContainer, setShowContainer] = useState(false);
+function InputSearch({ showContainer, setShowContainer }) {
+  function toggleContainer(e) {
+    if (e.target.value.length > 3) {
+      setShowContainer(true);
+    } else {
+      setShowContainer(false);
+    }
+  }
 
   return (
     <div className="relative text-white">
-      <Input className="whiteShadow text-2xl w-full" />
+      <Input
+        onChange={toggleContainer}
+        className="whiteShadow text-2xl w-full"
+      />
       <img
         src="/search.svg"
         alt="searchIcon"
