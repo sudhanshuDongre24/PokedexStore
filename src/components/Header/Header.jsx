@@ -27,7 +27,7 @@ function Header() {
         <nav className="p-8 flex items-center justify-between w-full  ">
           {/* Logo */}
           <h1
-            className={` text-5xl  font-extrabold ${
+            className={` text-5xl cursor-pointer  font-extrabold ${
               isHomePage ? "text-[#dddddd]" : "text-black"
             }`}
             onClick={() => navigate("/")}
