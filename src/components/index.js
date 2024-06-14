@@ -6,6 +6,7 @@ import Card from "./Card/Card";
 import InfiniteScrollComponent from "./InfiniteScrollComponent/InfinitScrollComponent";
 import InputSearch from "./InputSearch/InputSearch";
 import Input from "./Input/Input";
+import PriceBox from "./PriceBox/PriceBox";
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   InfiniteScrollComponent,
   InputSearch,
   Input,
+  PriceBox,
 };
