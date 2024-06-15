@@ -7,6 +7,7 @@ import InfiniteScrollComponent from "./InfiniteScrollComponent/InfinitScrollComp
 import InputSearch from "./InputSearch/InputSearch";
 import Input from "./Input/Input";
 import PriceBox from "./PriceBox/PriceBox";
+import PercentageBar from "./PercentageBar/PercentageBar";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   InputSearch,
   Input,
   PriceBox,
+  PercentageBar,
 };
