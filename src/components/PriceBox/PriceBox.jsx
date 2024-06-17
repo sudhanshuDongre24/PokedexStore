@@ -1,4 +1,5 @@
 import React from "react";
+import Tooltip from "../Tooltip/Tooltip";
 
 function PriceBox({ children, className = "" }) {
   return (

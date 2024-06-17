@@ -20,9 +20,11 @@ function ProductPage() {
       <div className="sticky z-[29] top-[115px] h-full py-2 border-b-[1px] border-black bg-white">
         <Container className="flex items-center justify-between">
           <div className="flex items-center justify-between gap-8">
-            <PriceBox className="border-black border-[2px] py-[4px]">
-              ${pokemon.speed}
-            </PriceBox>
+            <Tooltip position="right" text={`$${pokemon.speed}`}>
+              <PriceBox className="border-black border-[2px] py-[4px]">
+                ${pokemon.speed}
+              </PriceBox>
+            </Tooltip>
 
             <h1 className=" mb-1 font-semibold  text-2xl">{pokemon.name}</h1>
           </div>
@@ -78,7 +80,7 @@ function ProductPage() {
                       <span>Add to wish list</span>
                       <span>{`>`}</span>
                     </Button>
-                    <Tooltip text="share">
+                    <Tooltip text="share" className="bg-black text-white">
                       <Button className="border-black border-solid border-2 flex-[1]">
                         ✔
                       </Button>
@@ -90,13 +92,19 @@ function ProductPage() {
                     <h1 className="font-semibold">Ranking</h1>
                   </div>
 
-                  <div className="flex justify-between items-center flex-col gap-3">
+                  <div className="flex flex-col gap-6">
                     <PercentageBar hp={pokemon.hp} />
+
                     <PercentageBar attack={pokemon.attack} />
+
                     <PercentageBar defense={pokemon.defense} />
+
                     <PercentageBar special_attack={pokemon.special_attack} />
+
                     <PercentageBar special_defense={pokemon.special_defense} />
+
                     <PercentageBar speed={pokemon.speed} />
+
                     <PercentageBar
                       total={
                         pokemon.hp +

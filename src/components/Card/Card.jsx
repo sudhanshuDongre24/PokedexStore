@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { changeTheme } from "../../store/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 import PriceBox from "../PriceBox/PriceBox";
+import Tooltip from "../Tooltip/Tooltip";
 
 function Card({ id, name, type, speed }) {
   const navigate = useNavigate();
@@ -29,7 +30,13 @@ function Card({ id, name, type, speed }) {
       <h3 className="pl-2 mb-2 text-lg ">{type.join(", ")}</h3>
       <span className="pl-1">⭐5.0 (150+)</span>
       <hr className=" border-[0.0625rem] mt-3  border-[rgba(221,221,221,0.35)] border-solid" />
-      <PriceBox>${speed}</PriceBox>
+      <Tooltip
+        position="right"
+        text={`$${speed}`}
+        className="bg-white text-black"
+      >
+        <PriceBox>${speed}</PriceBox>
+      </Tooltip>
     </div>
   );
 }

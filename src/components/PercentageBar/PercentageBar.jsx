@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import Tooltip from "../Tooltip/Tooltip";
 
 function PercentageBar(prop) {
+  const [showValue, setShowValue] = useState(false);
   const [key, value] = Object.entries(prop)[0];
 
   let avgValue = 0;
@@ -45,17 +47,25 @@ function PercentageBar(prop) {
 
   return (
     <div
-      onMouseEnter={() => console.log(value)}
-      className="w-full flex justify-even gap-2"
+      className="flex gap-2 relative cursor-pointer"
+      onMouseEnter={() => setShowValue(true)}
+      onMouseLeave={() => setShowValue(false)}
     >
       <h2 className="">{key}:</h2>
-      <div className=" border-black border-solid border-[1px] h-6 w-full rounded">
+
+      <div className="w-full border-black border-solid border-[1px] h-6  rounded">
         <div
           style={{ width: avgValue + "%" }}
-          className={`bg-[#ff90e8] h-full rounded-r `}
+          className={`bg-[#ff90e8] h-full w-full rounded-r `}
         ></div>
       </div>
+
       <h2>{avgValue}%</h2>
+      {showValue && (
+        <div className="absolute bg-black rounded text-white px-2 py-1 left-[-20%] text-nowrap">
+          {key}: {value} pts
+        </div>
+      )}
     </div>
   );
 }
