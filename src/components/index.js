@@ -8,6 +8,7 @@ import InputSearch from "./InputSearch/InputSearch";
 import Input from "./Input/Input";
 import PriceBox from "./PriceBox/PriceBox";
 import PercentageBar from "./PercentageBar/PercentageBar";
+import Tooltip from "./Tooltip/Tooltip";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   Input,
   PriceBox,
   PercentageBar,
+  Tooltip,
 };

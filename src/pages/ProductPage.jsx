@@ -2,7 +2,13 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { changeTheme } from "../store/themeSlice";
-import { Button, Container, PercentageBar, PriceBox } from "../components";
+import {
+  Button,
+  Container,
+  PercentageBar,
+  PriceBox,
+  Tooltip,
+} from "../components";
 
 function ProductPage() {
   const { id } = useParams();
@@ -72,9 +78,11 @@ function ProductPage() {
                       <span>Add to wish list</span>
                       <span>{`>`}</span>
                     </Button>
-                    <Button className="border-black border-solid border-2 flex-[1]">
-                      ✔
-                    </Button>
+                    <Tooltip text="share">
+                      <Button className="border-black border-solid border-2 flex-[1]">
+                        ✔
+                      </Button>
+                    </Tooltip>
                   </div>
                 </div>
                 <div className="border-b-[1px] border-solid border-black p-6">
