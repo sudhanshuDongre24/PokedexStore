@@ -48,30 +48,56 @@ function ProductPage() {
                 className="w-full h-[650px] bg-cover bg-white"
               />
             </div>
-            {/* content */}
+            {/* content */} {/* Left Side */}
             <div className="flex justify-between  h-full">
-              <div className="border-r-2 border-solid border-black flex-[2]">
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-                <h1>{pokemon.name}</h1>
-              </div>
+              <section className="border-r-2 border-solid border-black flex-[2]">
+                <div className="border-b-[1px] solid border-black py-2">
+                  <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
+                </div>
 
+                <section className="px-6  flex justify-between items-center border-b-[1px] border-solid border-black ">
+                  <div className="flex-1 border-r-[1px] border-solid border-black">
+                    <Tooltip position="right" text={`$${pokemon.speed}`}>
+                      <PriceBox className="border-black border-2 border-solid">
+                        ${pokemon.speed}
+                      </PriceBox>
+                    </Tooltip>
+                  </div>
+                  <div className="flex-[1] flex py-4 px-8 border-black border-r-[1px] border-solid items-center gap-2">
+                    <img
+                      className=" h-5 w-[6] border-black border-solid border-[2px] rounded-full"
+                      src="/pngegg.png"
+                      alt=""
+                    />
+                    <p className="underline">Pokemon</p>
+                  </div>
+
+                  <div className="pl-4 flex-[3]">
+                    <span className="">7 rating</span>
+                  </div>
+                </section>
+
+                <section className="p-4 text-wrap mt-5">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus modi laudantium maiores blanditiis? Sapiente
+                    praesentium eius, incidunt possimus iure aspernatur,
+                    doloribus error ab fuga, sed soluta atque. Repellat id unde
+                    laboriosam exercitationem assumenda possimus et nostrum
+                    aliquid maxime harum non blanditiis, veniam praesentium,
+                    modi ab ducimus quaerat soluta! Laborum nostrum facilis
+                    voluptas, tempora, sed ducimus molestias minus eum
+                    necessitatibus ad id temporibus a explicabo vel nobis
+                    distinctio, praesentium enim. Et non voluptatibus deserunt
+                    esse blanditiis repellat officia neque consequatur quibusdam
+                    exercitationem iste veritatis, ullam quasi ipsum? Quibusdam
+                    deleniti, architecto esse consectetur et dolor molestias
+                    quae quidem ea veniam laudantium quasi.
+                  </p>
+                </section>
+              </section>
+
+              {/* Right side */}
               <div className="flex-[1]">
                 <div className="border-b-[1px] border-solid border-black p-6 ">
                   <Button className="bg-[#ff90e8] w-full ">Add to cart</Button>

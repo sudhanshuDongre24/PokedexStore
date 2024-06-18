@@ -28,6 +28,14 @@ function Card({ id, name, type, speed }) {
 
       <h2 className="text-lg mt-4 mb-2 pl-2">{name}</h2>
       <h3 className="pl-2 mb-2 text-lg ">{type.join(", ")}</h3>
+      <div className="pl-2 flex items-center gap-2 justify-start mb-2 ">
+        <img
+          className=" h-5 w-[6] border-white border-solid border-[1px] rounded-full"
+          src="/pngegg.png"
+          alt=""
+        />
+        <p className="underline">Pokemon</p>
+      </div>
       <span className="pl-1">⭐5.0 (150+)</span>
       <hr className=" border-[0.0625rem] mt-3  border-[rgba(221,221,221,0.35)] border-solid" />
       <Tooltip
