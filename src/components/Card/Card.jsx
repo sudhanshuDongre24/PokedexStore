@@ -18,7 +18,7 @@ function Card({ id, name, type, speed }) {
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
           alt=""
-          className="w-[210px] mx-auto p-6 z-50"
+          className="w-[210px] mx-auto p-6 z-50 bg-white"
           spinner="true"
           fadein="true"
         />
@@ -30,7 +30,7 @@ function Card({ id, name, type, speed }) {
       <h3 className="pl-2 mb-2 text-lg ">{type.join(", ")}</h3>
       <div className="pl-2 flex items-center gap-2 justify-start mb-2 ">
         <img
-          className=" h-5 w-[6] border-white border-solid border-[1px] rounded-full"
+          className=" h-5 w-[6] border-white border-solid border-[1px] rounded-full "
           src="/pngegg.png"
           alt=""
         />
