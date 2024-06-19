@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: #242423;
 }
 
-@keyframes logo-spin {
-  from {
+.priceBox {
+  display: inline-block;
+  clip-path: polygon(100% 0, 75% 50%, 100% 100%, 0 100%, 0 0);
+}
+
+.spinner_container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
+
+.spinner {
+  border: 6px solid rgba(221, 221, 221.35);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.whiteShadow {
+  transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.card {
-  padding: 2em;
+.whiteShadow:hover {
+  box-shadow: 0.25rem 0.25rem 0 rgba(221, 221, 221, 1);
 }
 
-.read-the-docs {
-  color: #888;
+.whiteShadow:active {
+  box-shadow: 0;
+}
+
+.whiteShadowAnimate:hover {
+  transform: translate(-0.25rem, -0.25rem);
+  animation-delay: 24s;
+}
+
+.active {
+  opacity: 1 !important;
+  transition: 0.5s cubic-bezier(0.45, 0.85, 0.5, 1);
+}
+
+.activeli {
+  background: white;
+  color: black;
 }
