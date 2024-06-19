@@ -29,7 +29,7 @@ function ProductPage() {
             <h1 className=" mb-1 font-semibold  text-2xl">{pokemon.name}</h1>
           </div>
           <div className="flex justify-between text-center items-center gap-2">
-            <span>7 rating</span>
+            <span>⭐⭐⭐⭐⭐ 7 rating</span>
             <Button className="hover:shadow-red-500 bg-[#ff90e8] border-black font-medium">
               Add to cart
             </Button>
@@ -73,7 +73,7 @@ function ProductPage() {
                   </div>
 
                   <div className="pl-4 flex-[3]">
-                    <span className="">7 rating</span>
+                    <span className="">⭐⭐⭐⭐⭐ 7 rating</span>
                   </div>
                 </section>
 
@@ -145,7 +145,9 @@ function ProductPage() {
                 </div>
 
                 <div className="px-4 pt-4 pb-8">
-                  <h2 className="text-center py-4">Comment</h2>
+                  <h2 className="text-center py-4 font-semibold text-[16px]">
+                    Comment
+                  </h2>
 
                   <div className="flex flex-col gap-2 mb-6">
                     <span>⭐⭐⭐⭐⭐</span>
