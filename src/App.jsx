@@ -1,9 +1,6 @@
-import { useEffect } from "react";
-import supabase from "./supabase/supabaseClient";
-import "./App.css";
 import { Header } from "./components";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import "./App.css";
 
 function App() {
   return (

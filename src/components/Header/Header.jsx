@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 border-solid border-b-[0.0625rem] z-30  ${
+      className={`sticky  top-0 border-solid border-b-[0.0625rem] z-30  ${
         isHomePage
           ? "bg-[#242423] border-b-[rgba(221,221,221,0.35)]"
           : "bg-white border-b-[black]"

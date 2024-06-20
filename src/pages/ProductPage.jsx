@@ -17,7 +17,7 @@ function ProductPage() {
 
   return (
     <>
-      <div className="sticky z-[29] top-[115px] h-full py-2 border-b-[1px] border-black bg-white">
+      <div className="sticky z-[29] top-[114px] h-full py-2 border-b-[1px] border-black bg-white">
         <Container className="flex items-center justify-between">
           <div className="flex items-center justify-between gap-8">
             <Tooltip position="right" text={`$${pokemon.speed}`}>
