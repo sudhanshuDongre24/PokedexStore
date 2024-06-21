@@ -13,8 +13,6 @@ function Header() {
     isHomePage = true;
   }
 
-  function closeDialogBox() {}
-
   return (
     <header
       className={`sticky  top-0 border-solid border-b-[0.0625rem] z-30  ${
@@ -24,7 +22,7 @@ function Header() {
       }`}
     >
       <Container>
-        <nav className="p-8 flex items-center justify-between w-full  ">
+        <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
           {/* Logo */}
           <h1
             className={` text-5xl cursor-pointer  font-extrabold ${

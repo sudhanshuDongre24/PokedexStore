@@ -49,8 +49,8 @@ function ProductPage() {
               />
             </div>
             {/* content */} {/* Left Side */}
-            <div className="flex justify-between  h-full">
-              <section className="border-r-2 border-solid border-black flex-[2]">
+            <div className="flex justify-between flex-col sm:flex-row   h-full">
+              <section className="border-b-[1px] sm:border-r-[1px]  border-solid border-black flex-[2]">
                 <div className="border-b-[1px] solid border-black py-2">
                   <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
                 </div>
