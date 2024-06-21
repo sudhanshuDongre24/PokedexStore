@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { changeTheme } from "../store/themeSlice";
+
 import {
   Button,
   Container,
@@ -43,7 +43,7 @@ function ProductPage() {
             {/* Image */}
             <div className="border-b-2 border-solid border-black bg-white">
               <img
-                src="/public/pngegg.png"
+                src="/pngegg.png"
                 alt=""
                 className="w-full h-[650px] bg-cover bg-white"
               />
