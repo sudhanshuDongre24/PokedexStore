@@ -1,8 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Container, Loading, InfiniteScrollComponent } from "../components";
-
 import { addPokemonData } from "../store/pokemonSlice";
-import { changeTheme } from "../store/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 

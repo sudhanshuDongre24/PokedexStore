@@ -19,6 +19,7 @@ function InputSearch({ showContainer, setShowContainer }) {
     .slice(0, 5);
 
   function inputChange(e) {
+    setSelect(-1);
     dispatch(setSearch(e.target.value));
     if (e.target.value.length > 1) {
       setShowContainer(true);
@@ -39,19 +40,23 @@ function InputSearch({ showContainer, setShowContainer }) {
     }
   }
   function inputKeydownFunction(e) {
+    // Empty Search
+    if (searchData.length == 0) {
+      return;
+    }
+
     if (e.key === "ArrowUp" || e.key === "ArrowDown") {
       e.preventDefault();
     }
-
     if (e.key === "ArrowUp" && select > 0) {
       setSelect((prev) => prev - 1);
     }
     if (e.key == "ArrowDown" && select < searchData.length - 1) {
       setSelect((prev) => prev + 1);
     }
+
     if (e.key === "Enter") {
       const id = listItemRef.current[select];
-      console.log(id);
       searchPokemon(id);
       setSelect(-1);
       setShowContainer(false);
@@ -80,7 +85,7 @@ function InputSearch({ showContainer, setShowContainer }) {
       {showContainer && (
         <div className="absolute pb-4 border-2 rounded mt-3 w-full bg-[rgba(29,29,29,0.9)] border-[rgba(221,221,221,0.35)]">
           {searchData.length == 0 ? (
-            <h1>NO data found</h1>
+            <h1 className="text-center my-5">NO data found</h1>
           ) : (
             <ul>
               {searchData.map((data, index) => (
@@ -91,7 +96,7 @@ function InputSearch({ showContainer, setShowContainer }) {
                   onClick={() => {
                     searchPokemon(data.id);
                   }}
-                  className={`py-2 hover:bg-white active:bg-white active:text-black  hover:text-black  ${
+                  className={`py-3 px-3 hover:bg-white active:bg-white active:text-black  hover:text-black  ${
                     select === index ? "text-black bg-white" : ""
                   } `}
                 >

@@ -38,7 +38,7 @@ function Header() {
           {showContainer && (
             <div
               id="overlay"
-              className="bg-black absolute top-0 w-full left-0 h-screen z-[5] "
+              className="bg-[rgba(0,0,0,0.7)] absolute top-0 w-full left-0 h-screen z-[5] "
               onClick={() => setShowContainer(false)}
             ></div>
           )}
