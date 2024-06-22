@@ -1,13 +1,19 @@
-import { useEffect, useState, Children, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "..";
 
 let a = 26;
+let b;
 export default function InfiniteScrollComponent({ pokemon }) {
   const [count, setCount] = useState(a);
-  const clickedCardRef = useRef();
-
   a = count > a ? count : a;
-  console.log(a);
+  globalThis.scrollTo(0, 0);
+  useEffect(() => {
+    const element = document.getElementById(b);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [b]);
+
   const cards = [];
   useEffect(() => {
     const onScroll = () => {
@@ -27,7 +33,12 @@ export default function InfiniteScrollComponent({ pokemon }) {
       break;
     }
     cards.push(
-      <li className="mx-auto" id={pokemon[i].id} key={pokemon[i].id}>
+      <li
+        className="mx-auto"
+        id={pokemon[i].id}
+        key={pokemon[i].name}
+        onClick={() => (b = pokemon[i].id)}
+      >
         <Card {...pokemon[i]} />
       </li>
     );

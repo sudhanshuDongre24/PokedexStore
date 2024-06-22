@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import {
   Button,
@@ -14,6 +14,11 @@ function ProductPage() {
   const { id } = useParams();
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const pokemon = pokemonData.find((user) => user.id == id);
+
+  const { pathname } = useLocation();
+  useEffect(() => {
+    globalThis.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
