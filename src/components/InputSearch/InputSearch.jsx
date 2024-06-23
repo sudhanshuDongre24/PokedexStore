@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../../store/searchSlice";
 import { useNavigate } from "react-router-dom";
 
-function InputSearch({ showContainer, setShowContainer }) {
+function InputSearch({ showOverlay, setShowOverlay }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const listItemRef = useRef([]);
@@ -22,20 +22,20 @@ function InputSearch({ showContainer, setShowContainer }) {
     setSelect(-1);
     dispatch(setSearch(e.target.value));
     if (e.target.value.length > 1) {
-      setShowContainer(true);
+      setShowOverlay(true);
     } else {
-      setShowContainer(false);
+      setShowOverlay(false);
     }
   }
   function searchPokemon(id) {
     navigate(`pokemon/${id}`);
-    setShowContainer(false);
+    setShowOverlay(false);
     dispatch(setSearch(""));
   }
 
   function checkValue(e) {
     if (e.target.value !== "") {
-      setShowContainer(true);
+      setShowOverlay(true);
       setSelect(-1);
     }
   }
@@ -59,10 +59,10 @@ function InputSearch({ showContainer, setShowContainer }) {
       const id = listItemRef.current[select];
       searchPokemon(id);
       setSelect(-1);
-      setShowContainer(false);
+      setShowOverlay(false);
     }
     if (e.key === "Escape") {
-      setShowContainer(false);
+      setShowOverlay(false);
       setSelect(-1);
     }
   }
@@ -82,7 +82,7 @@ function InputSearch({ showContainer, setShowContainer }) {
         className="absolute w-8 top-2 right-6"
       />
 
-      {showContainer && (
+      {showOverlay && (
         <div className="absolute pb-4 border-2 rounded mt-3 w-full bg-[rgba(29,29,29,0.9)] border-[rgba(221,221,221,0.35)]">
           {searchData.length == 0 ? (
             <h1 className="text-center my-5">NO data found</h1>
