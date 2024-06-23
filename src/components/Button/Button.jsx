@@ -1,10 +1,18 @@
 import React from "react";
 
-function Button({ children, onClick, className }) {
+function Button({
+  children,
+  onClick,
+  className,
+  type = "button",
+  ariaLabel = "",
+}) {
   return (
     <button
       onClick={onClick}
+      type={type}
       className={`rounded py-3 px-4 capitalize border-solid border-[0.0625rem] border-[rgba(221,221,221,0.35)] whiteShadow whiteShadowAnimate ${className}`}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
