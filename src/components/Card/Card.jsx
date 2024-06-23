@@ -1,14 +1,13 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React from "react";
 import { ImageLoader } from "image-loader-spinner";
 import { useNavigate } from "react-router-dom";
-import { changeTheme } from "../../store/themeSlice";
-import { useDispatch, useSelector } from "react-redux";
 import PriceBox from "../PriceBox/PriceBox";
 import Tooltip from "../Tooltip/Tooltip";
 
 function Card({ id, name, type, speed }) {
   const navigate = useNavigate();
   ImageLoader("/pngegg.png", 200);
+
   return (
     <div
       className="border-[0.0625rem] rounded border-[rgba(221,221,221,1)] bg-black border-solid w-fit whiteShadow"
@@ -17,7 +16,7 @@ function Card({ id, name, type, speed }) {
       <div className="">
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-          alt=""
+          alt={`pokemon name: ${name},Pokemon Id: ${id}`}
           className="w-[210px] mx-auto p-6 z-50 bg-white"
           spinner="true"
           fadein="true"
@@ -32,7 +31,7 @@ function Card({ id, name, type, speed }) {
         <img
           className=" h-5 w-[6] border-white border-solid border-[1px] rounded-full "
           src="/pngegg.png"
-          alt=""
+          alt="Pokmonball image as the sell of pokemon"
         />
         <p className="underline">Pokemon</p>
       </div>
