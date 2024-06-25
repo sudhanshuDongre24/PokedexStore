@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
     "image-loader-spinner": "^1.2.5",
