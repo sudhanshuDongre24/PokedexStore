@@ -1,30 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Button, Container, InputSearch } from "..";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [showContainer, setShowContainer] = useState(false);
-  let isHomePage;
-  if (location.pathname.includes("/pokemon")) {
-    isHomePage = false;
-  } else {
-    isHomePage = true;
-  }
-
-  function closeDialogBox() {}
+  const [showOverlay, setShowOverlay] = useState(false);
+  let isHomePage = !location.pathname.includes("/pokemon");
 
   return (
     <header
-      className={`sticky top-0 border-solid border-b-[0.0625rem] z-30  ${
+      className={`sticky  top-0 border-solid border-b-[0.0625rem] z-30  ${
         isHomePage
           ? "bg-[#242423] border-b-[rgba(221,221,221,0.35)]"
           : "bg-white border-b-[black]"
       }`}
     >
       <Container>
-        <nav className="p-8 flex items-center justify-between w-full  ">
+        <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
           {/* Logo */}
           <h1
             className={` text-5xl cursor-pointer  font-extrabold ${
@@ -35,28 +28,34 @@ function Header() {
             Pokemon
           </h1>
 
-          {showContainer && (
+          {showOverlay && (
             <div
               id="overlay"
-              className="bg-black absolute top-0 w-full left-0 h-screen z-[5] "
-              onClick={() => setShowContainer(false)}
+              className="bg-[rgba(0,0,0,0.5)] top-0 w-full left-0 h-screen z-[5] fixed "
+              onClick={() => setShowOverlay(false)}
             ></div>
           )}
 
           {/* Input field */}
           <div className="w-full mx-4 z-50">
             <InputSearch
-              setShowContainer={setShowContainer}
-              showContainer={showContainer}
+              setShowOverlay={setShowOverlay}
+              showOverlay={showOverlay}
             />
           </div>
 
           {/* Button Section */}
           <div className="ml-2 flex items-center justify-center w-fit-content">
-            <Button className=" text-[#dddddd] hover:bg-black hover:text-white">
+            <Button
+              ariaLabel="SignIn Button"
+              className=" text-[#dddddd] hover:bg-black hover:text-white"
+            >
               SignIn
             </Button>
-            <Button className=" ml-6 bg-[rgb(221,221,221)] text-black hover:bg-[#ff90e8] ">
+            <Button
+              ariaLabel="Login Button"
+              className=" ml-6 bg-[rgb(221,221,221)] text-black hover:bg-[#ff90e8] "
+            >
               LogIn
             </Button>
           </div>

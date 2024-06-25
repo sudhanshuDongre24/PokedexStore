@@ -1,7 +1,7 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { changeTheme } from "../store/themeSlice";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useLocation, useParams } from "react-router-dom";
+
 import {
   Button,
   Container,
@@ -15,9 +15,14 @@ function ProductPage() {
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const pokemon = pokemonData.find((user) => user.id == id);
 
+  const { pathname } = useLocation();
+  useEffect(() => {
+    globalThis.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
-      <div className="sticky z-[29] top-[115px] h-full py-2 border-b-[1px] border-black bg-white">
+      <div className="sticky z-[29] top-[114px] h-full py-2 border-b-[1px] border-black bg-white">
         <Container className="flex items-center justify-between">
           <div className="flex items-center justify-between gap-8">
             <Tooltip position="right" text={`$${pokemon.speed}`}>
@@ -43,14 +48,14 @@ function ProductPage() {
             {/* Image */}
             <div className="border-b-2 border-solid border-black bg-white">
               <img
-                src="/public/pngegg.png"
+                src="/pngegg.png"
                 alt=""
                 className="w-full h-[650px] bg-cover bg-white"
               />
             </div>
             {/* content */} {/* Left Side */}
-            <div className="flex justify-between  h-full">
-              <section className="border-r-2 border-solid border-black flex-[2]">
+            <div className="flex justify-between flex-col sm:flex-row   h-full">
+              <section className="border-b-[1px] sm:border-r-[1px]  border-solid border-black flex-[2]">
                 <div className="border-b-[1px] solid border-black py-2">
                   <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
                 </div>
