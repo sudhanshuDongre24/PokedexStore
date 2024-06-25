@@ -10,7 +10,7 @@ export class Supabase {
 
   async getPokemonData() {
     try {
-      return await this.supabase.from("PokemonData").select("*");
+      return await this.supabase.from("PokemonData").select("data");
     } catch (error) {
       console.log("Supabase Service :: getPokemonData :: error ", error);
     }

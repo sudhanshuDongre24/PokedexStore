@@ -1,16 +1,16 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Loading, InfiniteScrollComponent } from "../components";
 import { addPokemonData } from "../store/pokemonSlice";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import supabaseService from "../supabase/supabaseClient";
 
 const fetchPokemonData = async (dispatch, setLoader) => {
   try {
-    const response = await axios.get("/pokemon.json");
-    dispatch(addPokemonData(response.data));
+    const { data } = await supabaseService.getPokemonData();
+    dispatch(addPokemonData(data[0].data));
     setLoader(true);
   } catch (error) {
-    console.log("Home Component :: fetchPokemon Data :: error ", error);
+    console.log("Home Component :: fetchPokemonData :: error ", error);
   }
 };
 
