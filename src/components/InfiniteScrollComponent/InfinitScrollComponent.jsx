@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import { Card } from "..";
 
-let a = 26;
+/* let a = 26;
 let b;
+ */
+
 export default function InfiniteScrollComponent({ pokemon }) {
-  const [count, setCount] = useState(a);
-  a = count > a ? count : a;
+  const [count, setCount] = useState(26);
   globalThis.scrollTo(0, 0);
+
+  /* 
+  a = count > a ? count : a;
   useEffect(() => {
     const element = document.getElementById(b);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [b]);
-
+ */
   const cards = [];
   useEffect(() => {
     const onScroll = () => {
