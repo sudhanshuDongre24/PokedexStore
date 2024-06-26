@@ -5,13 +5,13 @@ import { useLocation, useParams } from "react-router-dom";
 import {
   Button,
   Container,
-  PercentageBar,
   PriceBox,
   ProductPageTopHeader,
   Tooltip,
   RankingComponent,
   ProductDetails,
   CommentSection,
+  ImageComponent,
 } from "../components";
 
 function ProductPage() {
@@ -32,10 +32,10 @@ function ProductPage() {
           <div className="w-full border-2 border-solid border-black  rounded">
             {/* Image */}
             <div className="border-b-2 border-solid border-black bg-white">
-              <img
-                src="/pngegg.png"
-                alt=""
-                className="w-full h-[650px] bg-cover bg-white"
+              <ImageComponent
+                altText={`pokemon-name: ${pokemon.name},pokemon-id: ${pokemon.id}`}
+                id={pokemon.id}
+                className="w-full h-[670px] p-8  bg-cover"
               />
             </div>
             {/* content */} {/* Left Side */}

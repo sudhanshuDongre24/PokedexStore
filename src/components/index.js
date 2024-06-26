@@ -13,6 +13,7 @@ import ProductPageTopHeader from "./ProductPageTopHeader/ProductPageTopHeader";
 import RankingComponent from "./RankingComponent/RankingComponent";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import CommentSection from "./CommentSection/CommentSection";
+import ImageComponent from "./ImageComponent/ImageComponent";
 
 export {
   Header,
@@ -30,4 +31,5 @@ export {
   RankingComponent,
   ProductDetails,
   CommentSection,
+  ImageComponent,
 };
