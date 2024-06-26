@@ -41,7 +41,7 @@ export default function InfiniteScrollComponent({ pokemon }) {
         className="mx-auto"
         id={pokemon[i].id}
         key={pokemon[i].name}
-        onClick={() => (b = pokemon[i].id)}
+        // onClick={() => (b = pokemon[i].id)}
       >
         <Card {...pokemon[i]} />
       </li>
