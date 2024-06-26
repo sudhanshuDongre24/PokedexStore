@@ -7,7 +7,6 @@ let b;
 
 export default function InfiniteScrollComponent({ pokemon }) {
   const [count, setCount] = useState(26);
-  globalThis.scrollTo(0, 0);
 
   /* 
   a = count > a ? count : a;

@@ -31,11 +31,12 @@ function ProductPage() {
         <Container>
           <div className="w-full border-2 border-solid border-black  rounded">
             {/* Image */}
-            <div className="border-b-2 border-solid border-black bg-white">
+            <div className="border-b-2 border-solid border-black bg-white ">
               <ImageComponent
                 altText={`pokemon-name: ${pokemon.name},pokemon-id: ${pokemon.id}`}
                 id={pokemon.id}
                 className="w-full h-[670px] p-8  bg-cover"
+                type={pokemon.type}
               />
             </div>
             {/* content */} {/* Left Side */}

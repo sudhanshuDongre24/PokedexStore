@@ -16,6 +16,7 @@ function Card({ id, name, type, speed }) {
           className="w-[210px]"
           id={id}
           altText={`pokemon-name: ${name},pokemon-id: ${id}`}
+          type={type}
         />
       </div>
 
