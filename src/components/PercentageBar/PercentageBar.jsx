@@ -62,7 +62,7 @@ function PercentageBar(prop) {
 
       <h2>{avgValue}%</h2>
       {showValue && (
-        <div className="absolute bg-black rounded text-white px-2 py-1 left-[-20%] text-nowrap">
+        <div className="absolute z-[49  ] bg-black rounded text-white px-2 mt-6 py-1 left-[-30%] text-nowrap">
           {key}: {value} pts
         </div>
       )}

@@ -9,6 +9,7 @@ import {
   PriceBox,
   ProductPageTopHeader,
   Tooltip,
+  RankingComponent,
 } from "../components";
 
 function ProductPage() {
@@ -100,36 +101,8 @@ function ProductPage() {
                     </Tooltip>
                   </div>
                 </div>
-                <div className="border-b-[1px] border-solid border-black p-6">
-                  <div className="text-center mb-4">
-                    <h1 className="font-semibold">Ranking</h1>
-                  </div>
 
-                  <div className="flex flex-col gap-6">
-                    <PercentageBar hp={pokemon.hp} />
-
-                    <PercentageBar attack={pokemon.attack} />
-
-                    <PercentageBar defense={pokemon.defense} />
-
-                    <PercentageBar special_attack={pokemon.special_attack} />
-
-                    <PercentageBar special_defense={pokemon.special_defense} />
-
-                    <PercentageBar speed={pokemon.speed} />
-
-                    <PercentageBar
-                      total={
-                        pokemon.hp +
-                        pokemon.attack +
-                        pokemon.defense +
-                        pokemon.special_attack +
-                        pokemon.special_defense +
-                        pokemon.speed
-                      }
-                    />
-                  </div>
-                </div>
+                <RankingComponent {...pokemon} />
 
                 <div className="px-4 pt-4 pb-8">
                   <h2 className="text-center py-4 font-semibold text-[16px]">

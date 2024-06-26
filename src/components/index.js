@@ -10,6 +10,7 @@ import PriceBox from "./PriceBox/PriceBox";
 import PercentageBar from "./PercentageBar/PercentageBar";
 import Tooltip from "./Tooltip/Tooltip";
 import ProductPageTopHeader from "./ProductPageTopHeader/ProductPageTopHeader";
+import RankingComponent from "./RankingComponent/RankingComponent";
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   PercentageBar,
   Tooltip,
   ProductPageTopHeader,
+  RankingComponent,
 };
