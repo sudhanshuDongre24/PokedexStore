@@ -10,6 +10,8 @@ import {
   ProductPageTopHeader,
   Tooltip,
   RankingComponent,
+  ProductDetails,
+  CommentSection,
 } from "../components";
 
 function ProductPage() {
@@ -42,7 +44,6 @@ function ProductPage() {
                 <div className="border-b-[1px] solid border-black py-2">
                   <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
                 </div>
-
                 <section className="px-6  flex justify-between items-center border-b-[1px] border-solid border-black ">
                   <div className="flex-1 border-r-[1px] border-solid border-black">
                     <Tooltip position="right" text={`$${pokemon.speed}`}>
@@ -64,25 +65,7 @@ function ProductPage() {
                     <span className="">⭐⭐⭐⭐⭐ 7 rating</span>
                   </div>
                 </section>
-
-                <section className="p-4 text-wrap mt-5">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Accusamus modi laudantium maiores blanditiis? Sapiente
-                    praesentium eius, incidunt possimus iure aspernatur,
-                    doloribus error ab fuga, sed soluta atque. Repellat id unde
-                    laboriosam exercitationem assumenda possimus et nostrum
-                    aliquid maxime harum non blanditiis, veniam praesentium,
-                    modi ab ducimus quaerat soluta! Laborum nostrum facilis
-                    voluptas, tempora, sed ducimus molestias minus eum
-                    necessitatibus ad id temporibus a explicabo vel nobis
-                    distinctio, praesentium enim. Et non voluptatibus deserunt
-                    esse blanditiis repellat officia neque consequatur quibusdam
-                    exercitationem iste veritatis, ullam quasi ipsum? Quibusdam
-                    deleniti, architecto esse consectetur et dolor molestias
-                    quae quidem ea veniam laudantium quasi.
-                  </p>
-                </section>
+                <ProductDetails />
               </section>
 
               {/* Right side */}
@@ -103,86 +86,7 @@ function ProductPage() {
                 </div>
 
                 <RankingComponent {...pokemon} />
-
-                <div className="px-4 pt-4 pb-8">
-                  <h2 className="text-center py-4 font-semibold text-[16px]">
-                    Comment
-                  </h2>
-
-                  <div className="flex flex-col gap-2 mb-6">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <p>&#34;Lorem ipsum dolor sit amet.&#34;</p>
-
-                    <div>
-                      <img
-                        src="/pngegg.png"
-                        alt=""
-                        className="w-5 h-5 inline"
-                      />
-                      <span className="underline pl-4">Anonymous</span>
-                      <span className="text-slate-600 italic no-underline ">
-                        {" "}
-                        about 3 hour ago
-                      </span>
-                    </div>
-                  </div>
-                  <hr className="border-black" />
-
-                  <div className="flex flex-col gap-2 mb-6 mt-6">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <p>&#34;Lorem ipsum dolor sit amet.&#34;</p>
-
-                    <div>
-                      <img
-                        src="/pngegg.png"
-                        alt=""
-                        className="w-5 h-5 inline"
-                      />
-                      <span className="underline pl-4">Anonymous</span>
-                      <span className="text-slate-600 italic no-underline ">
-                        {" "}
-                        about 3 hour ago
-                      </span>
-                    </div>
-                  </div>
-                  <hr className="border-black" />
-
-                  <div className="flex flex-col gap-2 mb-6 mt-6">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <p>&#34;Lorem ipsum dolor sit amet.&#34;</p>
-
-                    <div>
-                      <img
-                        src="/pngegg.png"
-                        alt=""
-                        className="w-5 h-5 inline"
-                      />
-                      <span className="underline pl-4">Anonymous</span>
-                      <span className="text-slate-600 italic no-underline ">
-                        {" "}
-                        about 3 hour ago
-                      </span>
-                    </div>
-                  </div>
-                  <hr className="border-black" />
-                  <div className="flex flex-col gap-2 mb-6 mt-6">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <p>&#34;Lorem ipsum dolor sit amet.&#34;</p>
-
-                    <div>
-                      <img
-                        src="/pngegg.png"
-                        alt=""
-                        className="w-5 h-5 inline"
-                      />
-                      <span className="underline pl-4">Anonymous</span>
-                      <span className="text-slate-600 italic no-underline ">
-                        {" "}
-                        about 3 hour ago
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <CommentSection />
               </div>
             </div>
           </div>
