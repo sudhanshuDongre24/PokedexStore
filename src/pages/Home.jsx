@@ -4,6 +4,7 @@ import { addPokemonData } from "../store/pokemonSlice";
 import { useDispatch, useSelector } from "react-redux";
 import supabaseService from "../supabase/supabaseClient";
 import axios from "axios";
+import { changeTheme } from "../store/themeSlice";
 
 const fetchPokemonData = async (dispatch, setLoader) => {
   try {
@@ -21,11 +22,9 @@ const fetchPokemonData = async (dispatch, setLoader) => {
 function Home() {
   const [loader, setLoader] = useState(false);
   const dispatch = useDispatch();
-
   useEffect(() => {
     fetchPokemonData(dispatch, setLoader);
   }, []);
-
   const pokemon = useSelector((state) => state.pokemonData.data);
 
   return (

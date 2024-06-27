@@ -23,7 +23,7 @@ function ProductPage() {
   useEffect(() => {
     globalThis.scrollTo(0, 0);
   }, [pathname]);
-
+  console.log(pokemon.type);
   return (
     <>
       <ProductPageTopHeader {...pokemon} />
@@ -64,6 +64,7 @@ function ProductPage() {
 
                   <div className="pl-4 flex-[3]">
                     <span className="">⭐⭐⭐⭐⭐ 7 rating</span>
+                    <h1>{pokemon.type}</h1>
                   </div>
                 </section>
                 <ProductDetails />

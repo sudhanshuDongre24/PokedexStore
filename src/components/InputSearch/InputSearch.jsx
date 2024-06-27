@@ -3,6 +3,7 @@ import Input from "../Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../../store/searchSlice";
 import { useNavigate } from "react-router-dom";
+import { changeTheme } from "../../store/themeSlice";
 
 function InputSearch({ showOverlay, setShowOverlay }) {
   const dispatch = useDispatch();
@@ -27,10 +28,11 @@ function InputSearch({ showOverlay, setShowOverlay }) {
       setShowOverlay(false);
     }
   }
-  function searchPokemon(id) {
+  function searchPokemon({ id, type }) {
     navigate(`pokemon/${id}`);
     setShowOverlay(false);
     dispatch(setSearch(""));
+    dispatch(changeTheme(type[0]));
   }
 
   function checkValue(e) {
@@ -56,8 +58,8 @@ function InputSearch({ showOverlay, setShowOverlay }) {
     }
 
     if (e.key === "Enter") {
-      const id = listItemRef.current[select];
-      searchPokemon(id);
+      const data = listItemRef.current[select];
+      searchPokemon(data);
       setSelect(-1);
       setShowOverlay(false);
     }
@@ -92,9 +94,9 @@ function InputSearch({ showOverlay, setShowOverlay }) {
                 <li
                   key={data.name}
                   id={index}
-                  ref={() => (listItemRef.current[index] = data.id)}
+                  ref={() => (listItemRef.current[index] = data)}
                   onClick={() => {
-                    searchPokemon(data.id);
+                    searchPokemon(data);
                   }}
                   className={`py-3 px-3 hover:bg-white active:bg-white active:text-black  hover:text-black  ${
                     select === index ? "text-black bg-white" : ""

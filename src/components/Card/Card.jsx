@@ -1,15 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import { ImageComponent, PriceBox, Tooltip } from "../";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../../store/themeSlice";
 
 function Card({ id, name, type, speed }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div
       className="border-[0.0625rem] rounded border-[rgba(221,221,221,1)] bg-black border-solid w-fit whiteShadow"
-      onClick={() => navigate(`pokemon/${id}`)}
+      onClick={() => {
+        navigate(`pokemon/${id}`);
+        dispatch(changeTheme(type[0]));
+      }}
     >
       <div className="">
         <ImageComponent

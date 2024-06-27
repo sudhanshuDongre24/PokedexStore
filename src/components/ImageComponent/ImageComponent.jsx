@@ -4,9 +4,7 @@ import useTheme from "../../hooks/useTheme";
 
 function ImageComponent({ className = "", altText, id, type }) {
   ImageLoader("/pngegg.png", 200);
-
-  const bgColor = useTheme(type[0]);
-
+  const bgColor = useTheme(type, "bgcolor");
   return (
     <>
       <img
