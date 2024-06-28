@@ -81,8 +81,6 @@ function bgColor(type) {
 }
 
 function headerColor(theme) {
-  console.log(theme);
-
   /* rgb(221,221,221)] bg-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] text-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] */
   switch (theme) {
     case "Home":
@@ -147,9 +145,99 @@ function headerColor(theme) {
   }
 }
 
+function cartButtonColor(theme) {
+  console.log(theme);
+
+  switch (theme) {
+    case "Grass":
+      return "bg-[#137b3d] text-[rgba(221,221,221)] blackShadow blackShadowAnimate hover:border-white";
+
+    default:
+      return "text-black";
+  }
+}
+
+function productpageHeaderbgcolor(theme) {
+  console.log(theme);
+  switch (theme) {
+    case "Grass":
+      return "bg-white text-black";
+  }
+}
+
+function productPageBgcolor(theme) {
+  console.log(theme);
+  switch (theme) {
+    case "Grass":
+      return "bg-white text-black";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
+  if (variant === "cartbutton") return cartButtonColor(theme);
+  if (variant === "productpageHeaderbgcolor")
+    return productpageHeaderbgcolor(theme);
+
+  if (variant === "productpagebgcolor") return productPageBgcolor(theme);
 };
 
 export default useTheme;
+
+/* 
+
+
+ case "Home":
+      return "text-[rgb(221,221,221)] bg-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] ";
+
+    case "Water":
+      return "bg-[#1452e3] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Steel":
+      return "bg-[#5f756d] text-[rgb(221,221,221)]  border-b-[rgba(221,221,221,0.35)]";
+
+    case "Rock":
+      return "bg-[#48180b] text-[rgb(221,221,221)] border-b-[black]";
+
+    case "Psychic":
+      return "bg-[#a12c68] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Poison":
+      return "bg-[#5d2d86] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Flying":
+      return "bg-[#4a677d] text-[rgb(221,221,221)] border-b-[black]";
+
+    case "Ghost":
+      return "bg-[#34326b] text-[rgb(221,221,221)] border-b-[black]";
+
+    case "Electric":
+      return "bg-[#e3e32b] text-[rgb(36,36,35)] border-b-[black]";
+case "Ground":
+      return "bg-[#a9712d] text-[rgb(221,221,221)] border-b-[black]";
+
+    case "Ice":
+      return "bg-[#87d2f4] text-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Normal":
+      return "bg-[#77505a] text-[rgb(36,36,35)] border-b-[black]";
+
+    case "Fire":
+      return "bg-[#aa1e23] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Bug":
+      return "bg-[#1d4a27] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Fighting":
+      return "bg-[#984024] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Fairy":
+      return "bg-[#971944] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Dragon":
+      return "bg-[#448a94] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+
+    case "Dark":
+      return "bg-[#040706] text-[rgb(221,221,221)] border-b-[black]";
+*/

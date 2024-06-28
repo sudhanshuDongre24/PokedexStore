@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 
 import {
@@ -13,9 +13,12 @@ import {
   CommentSection,
   ImageComponent,
 } from "../components";
+import { changeTheme } from "../store/themeSlice";
+import useTheme from "../hooks/useTheme";
 
 function ProductPage() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const pokemon = pokemonData.find((user) => user.id == id);
 
@@ -23,11 +26,13 @@ function ProductPage() {
   useEffect(() => {
     globalThis.scrollTo(0, 0);
   }, [pathname]);
-  console.log(pokemon.type);
+
+  const productpagebgcolor = useTheme(pokemon.type[0], "productpagebgcolor");
+
   return (
     <>
       <ProductPageTopHeader {...pokemon} />
-      <div className="bg-white text-black py-20 min-h-screen">
+      <div className={` text-inherit py-20 min-h-screen ${productpagebgcolor}`}>
         <Container>
           <div className="w-full border-2 border-solid border-black  rounded">
             {/* Image */}

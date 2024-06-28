@@ -7,7 +7,6 @@ import { changeTheme } from "../../store/themeSlice";
 function Card({ id, name, type, speed }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   return (
     <div
       className="border-[0.0625rem] rounded border-[rgba(221,221,221,1)] bg-black border-solid w-fit whiteShadow"
