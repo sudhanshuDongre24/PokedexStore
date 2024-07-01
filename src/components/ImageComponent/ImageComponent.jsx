@@ -10,10 +10,9 @@ function ImageComponent({ className = "", altText, id, type }) {
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
         alt={altText}
-        className={`mx-auto p-6 z-50 ${className}`}
+        className={`mx-auto text-black p-6 z-50 ${bgColor} ${className}`}
         spinner="true"
         fadein="true"
-        style={{ backgroundColor: `${bgColor}` }}
       />
     </>
   );

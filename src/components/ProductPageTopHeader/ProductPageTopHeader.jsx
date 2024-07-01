@@ -4,7 +4,7 @@ import useTheme from "../../hooks/useTheme";
 
 function ProductPageTopHeader({ name, speed, type }) {
   const cartButtonColor = useTheme(type[0], "cartbutton");
-  const productHeaderBgColor = useTheme(type[0], "productpageHeaderbgcolor");
+  const productHeaderBgColor = useTheme(type[0], "productpagebgcolor");
 
   return (
     <header

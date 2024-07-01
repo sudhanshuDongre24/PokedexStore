@@ -1,175 +1,165 @@
 import { useSelector } from "react-redux";
 
 function bgColor(type) {
-  let color;
   switch (type.toLowerCase()) {
     case "water":
-      return (color = "#86a8fc");
-    //   color = "#1452e3";
+      return "waterTypeColorLight";
 
     case "steel":
-      return (color = "#43bd95");
-    //color = "#5f756d";
+      return "steelTypeColorLight";
 
     case "rock":
-      return (color = "#8b3f20");
-    //  color = "#48180b";
+      return "rockTypeColorLight";
 
     case "psychic":
-      return (color = "#f91c90");
-    //  color = "#a12c68";
+      return "psychicTypeColorLight";
 
     case "poison":
-      return (color = "#9a68d9");
-    //  color = "#5d2d86";
+      return "poisonTypeColorLight";
 
     case "normal":
-      return (color = "#ca99a6");
-    //   color = "#77505a";
+      return "normalTypeColorLight";
 
     case "ice":
-      return (color = "#d6f1fb");
-    //color = "#87d2f4";
+      return "iceTypeColorLight";
 
     case "ground":
-      return (color = "#6e481e");
-    //   color = "#a9712d";
+      return "groundTypeColorLight";
 
     case "grass":
-      return (color = "#26ca4f");
-    //   color = "#137b3d";
+      return "grassTypeColorLight";
 
     case "ghost":
-      return (color = "#906691");
-    //   color = "#34326b";
+      return "ghostTypeColorLight";
 
     case "flying":
-      return (color = "#92b2c6");
-    //color = "#4a677d";
+      return "flyingTypeColorLight";
 
     case "fire":
-      return (color = "#fc4d5a");
-    //   color = " #aa1e23";
+      return "fireTypeColorLight";
 
     case "fighting":
-      return (color = "#ee6038");
-    // color = "#984024";
+      return "fightingTypeColorLight";
 
     case "fairy":
-      return (color = "#ea1369");
-    //  color = "#971944";
+      return "fairyTypeColorLight";
 
     case "electric":
-      return (color = "#fbfa73");
-    //   color = "#e3e32b";
+      return "electricTypeColorLight";
 
     case "dragon":
-      return (color = "#60cbd7");
-    //  color = "#448a94";
+      return "dragonTypeColorLight";
 
     case "dark":
-      return (color = "#5b5879");
-    //  color = "#040706";
+      return "darkTypeColorLight";
 
     case "bug":
-      return (color = "#3b9851");
-    //   color = "#1d4a27";
+      return "bugTypeColorLight";
 
     default:
-      return (color = "black");
+      return "black";
   }
 }
 
 function headerColor(theme) {
-  /* rgb(221,221,221)] bg-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] text-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] */
   switch (theme) {
     case "Home":
-      return "text-[rgb(221,221,221)] bg-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] ";
+      return "bg-[rgb(36,36,35)] textColorLightGray ";
 
     case "Water":
-      return "bg-[#1452e3] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "waterTypeColorDark textColorLightGray";
 
     case "Steel":
-      return "bg-[#5f756d] text-[rgb(221,221,221)]  border-b-[rgba(221,221,221,0.35)]";
+      return "steelTypeColorDark textColorLightGray";
 
     case "Rock":
-      return "bg-[#48180b] text-[rgb(221,221,221)] border-b-[black]";
+      return "rockTypeColorDark textColorLightGray";
 
     case "Psychic":
-      return "bg-[#a12c68] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "psychicTypeColorDark textColorLightGray";
 
     case "Poison":
-      return "bg-[#5d2d86] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "poisonTypeColorDark textColorLightGray ";
 
     case "Flying":
-      return "bg-[#4a677d] text-[rgb(221,221,221)] border-b-[black]";
+      return "flyingTypeColorDark textColorLightGray";
 
     case "Ghost":
-      return "bg-[#34326b] text-[rgb(221,221,221)] border-b-[black]";
+      return "ghostTypeColorDark textColorLightGray ";
 
     case "Electric":
-      return "bg-[#e3e32b] text-[rgb(36,36,35)] border-b-[black]";
+      return "electricTypeColorDark textColorDarkGray";
 
     case "Grass":
-      return "bg-[#137b3d] text-[rgb(221,221,221)] border-b-[black]";
+      return "grassTypeColorDark textColorLightGray";
 
     case "Ground":
-      return "bg-[#a9712d] text-[rgb(221,221,221)] border-b-[black]";
+      return "groundTypeColorDark textColorLightGray";
 
     case "Ice":
-      return "bg-[#87d2f4] text-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)]";
+      return "iceTypeColorDark textColorDarkGray";
 
     case "Normal":
-      return "bg-[#77505a] text-[rgb(36,36,35)] border-b-[black]";
+      return "normalTypeColorDark textColorDarkGray";
 
     case "Fire":
-      return "bg-[#aa1e23] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "fireTypeColorDark textColorLightGray";
 
     case "Bug":
-      return "bg-[#1d4a27] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "bugTypeColorDark textColorLightGray";
 
     case "Fighting":
-      return "bg-[#984024] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "fightingTypeColorDark textColorLightGray";
 
     case "Fairy":
-      return "bg-[#971944] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "fairyTypeColorDark textColorLightGray";
 
     case "Dragon":
-      return "bg-[#448a94] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
+      return "dragonTypeColorDark textColorLightGray";
 
     case "Dark":
-      return "bg-[#040706] text-[rgb(221,221,221)] border-b-[black]";
+      return "darkTypeColorDark textColorLightGray";
 
     default:
-      return "text-[rgb(36,36,35)] bg-[rgba(254,255,254,255)] border-b-[rgba(221,221,221,0.35)]";
+      return "bg-[rgba(254,255,254,255)] textColorDarkGray ";
   }
 }
 
 function cartButtonColor(theme) {
-  console.log(theme);
-
   switch (theme) {
     case "Grass":
-      return "bg-[#137b3d] text-[rgba(221,221,221)] blackShadow blackShadowAnimate hover:border-white";
+      return "";
 
     default:
       return "text-black";
   }
 }
 
-function productpageHeaderbgcolor(theme) {
-  console.log(theme);
-  switch (theme) {
-    case "Grass":
-      return "bg-white text-black";
-  }
-}
-
 function productPageBgcolor(theme) {
-  console.log(theme);
   switch (theme) {
+    case "Normal":
+    case "Ice":
+    case "Electric":
+      return "bgColorDarkGray text-white";
+
     case "Grass":
-      return "bg-white text-black";
+    case "Water":
+    case "Steel":
+    case "Flying":
+    case "Fighting":
+    case "Rock":
+    case "Poison":
+    case "Fairy":
+    case "Psychic":
+    case "Fire":
+    case "Ghost":
+    case "Ground":
+    case "Dragon":
+    case "Bug":
+    case "Dark":
+      return "bgColorWhite text-black";
+    default:
+      return "bgColorWhite text-black";
   }
 }
 
@@ -177,67 +167,8 @@ const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
   if (variant === "cartbutton") return cartButtonColor(theme);
-  if (variant === "productpageHeaderbgcolor")
-    return productpageHeaderbgcolor(theme);
-
+  if (variant === "productpageHeaderbgcolor") return productpagebgcolor(theme);
   if (variant === "productpagebgcolor") return productPageBgcolor(theme);
 };
 
 export default useTheme;
-
-/* 
-
-
- case "Home":
-      return "text-[rgb(221,221,221)] bg-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)] ";
-
-    case "Water":
-      return "bg-[#1452e3] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Steel":
-      return "bg-[#5f756d] text-[rgb(221,221,221)]  border-b-[rgba(221,221,221,0.35)]";
-
-    case "Rock":
-      return "bg-[#48180b] text-[rgb(221,221,221)] border-b-[black]";
-
-    case "Psychic":
-      return "bg-[#a12c68] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Poison":
-      return "bg-[#5d2d86] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Flying":
-      return "bg-[#4a677d] text-[rgb(221,221,221)] border-b-[black]";
-
-    case "Ghost":
-      return "bg-[#34326b] text-[rgb(221,221,221)] border-b-[black]";
-
-    case "Electric":
-      return "bg-[#e3e32b] text-[rgb(36,36,35)] border-b-[black]";
-case "Ground":
-      return "bg-[#a9712d] text-[rgb(221,221,221)] border-b-[black]";
-
-    case "Ice":
-      return "bg-[#87d2f4] text-[rgb(36,36,35)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Normal":
-      return "bg-[#77505a] text-[rgb(36,36,35)] border-b-[black]";
-
-    case "Fire":
-      return "bg-[#aa1e23] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Bug":
-      return "bg-[#1d4a27] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Fighting":
-      return "bg-[#984024] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Fairy":
-      return "bg-[#971944] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Dragon":
-      return "bg-[#448a94] text-[rgb(221,221,221)] border-b-[rgba(221,221,221,0.35)]";
-
-    case "Dark":
-      return "bg-[#040706] text-[rgb(221,221,221)] border-b-[black]";
-*/

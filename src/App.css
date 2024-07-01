@@ -111,7 +111,7 @@ body {
   background-color: #f91c90;
 }
 .psychicTypeColorDark {
-  background-color: #a12c69;
+  background-color: #a12c68;
 }
 
 .poisonTypeColorLight {
@@ -210,4 +210,32 @@ body {
 }
 .bugTypeColorDark {
   background-color: #1d4a27;
+}
+
+.bgColorDarkGray {
+  background-color: rgb(36, 36, 35);
+}
+
+.bgColorWhite {
+  background-color: #fff;
+}
+
+.textColorLightGray {
+  color: rgba(221, 221, 221, 1);
+}
+
+.textColorDarkGray {
+  color: rgba(36, 36, 35, 1);
+}
+
+.borderBottomLightGray {
+  border-bottom-color: rgba(221, 221, 221, 0.35);
+}
+
+.borderBottomDarkGray {
+  border-bottom-color: rgba(36, 36, 35, 0.35);
+}
+
+.borderBottomBlack {
+  border-bottom-color: black;
 }
