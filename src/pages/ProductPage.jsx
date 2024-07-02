@@ -70,7 +70,6 @@ function ProductPage() {
 
                   <div className="pl-4 flex-[3]">
                     <span className="">⭐⭐⭐⭐⭐ 7 rating</span>
-                    <h1>{pokemon.type}</h1>
                   </div>
                 </section>
                 <ProductDetails />
@@ -85,7 +84,9 @@ function ProductPage() {
                   <div className="flex items-center justify-between mt-6 gap-3  ">
                     <Button className="border-black border-solid border-2 flex justify-between items-center flex-[6] w-full ">
                       <span>Add to wish list</span>
-                      <span>{`>`}</span>
+                      <span className="textColorDarkGray font-extralight">
+                        &#x0056;
+                      </span>
                     </Button>
                     <Tooltip text="share" className="bg-black text-white">
                       <Button className="border-black border-solid border-2 flex-[1]">
