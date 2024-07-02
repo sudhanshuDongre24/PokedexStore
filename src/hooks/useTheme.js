@@ -62,7 +62,7 @@ function bgColor(type) {
 function headerColor(theme) {
   switch (theme) {
     case "Home":
-      return "bg-[rgb(36,36,35)] textColorLightGray ";
+      return "bgColorDarkGray textColorLightGray border-b-[1px] border-white ";
 
     case "Water":
       return "waterTypeColorDark textColorLightGray";
@@ -271,14 +271,104 @@ function borderColor(theme) {
   }
 }
 
+function headerBorderColor(theme) {
+  switch (theme) {
+    case "Normal":
+    case "Ice":
+    case "Electric":
+      return "border-b-[rgb(221,221,221)] border-t-[rgba(221,221,221,0.35)]";
+
+    case "Grass":
+    case "Water":
+    case "Steel":
+    case "Flying":
+    case "Fighting":
+    case "Rock":
+    case "Poison":
+    case "Fairy":
+    case "Psychic":
+    case "Fire":
+    case "Ghost":
+    case "Ground":
+    case "Dragon":
+    case "Bug":
+    case "Dark":
+      return "border-b-black border-t-[rgb(221,221,221)]";
+    default:
+      return "border-black";
+  }
+}
+
+function priceBoxColor(theme) {
+  switch (theme) {
+    case "Water":
+      return "waterTypeColorDark textColorLightGray";
+
+    case "Steel":
+      return "steelTypeColorDark textColorLightGray";
+
+    case "Rock":
+      return "rockTypeColorDark textColorLightGray";
+
+    case "Psychic":
+      return "psychicTypeColorDark textColorLightGray";
+
+    case "Poison":
+      return "poisonTypeColorDark textColorLightGray";
+
+    case "Normal":
+      return "normalTypeColorDark textColorLightGray border-white";
+
+    case "Ice":
+      return "iceTypeColorDark textColorDarkGray border-white";
+
+    case "Ground":
+      return "groundTypeColorDark textColorLightGray";
+
+    case "Grass":
+      return "grassTypeColorDark textColorLightGray";
+
+    case "Ghost":
+      return "ghostTypeColorDark textColorLightGray";
+
+    case "Flying":
+      return "flyingTypeColorDark textColorLightGray";
+
+    case "Fire":
+      return "fireTypeColorDark textColorLightGray";
+
+    case "Fighting":
+      return "fightingTypeColorDark textColorLightGray";
+
+    case "Fairy":
+      return "fairyTypeColorDark textColorLightGray";
+
+    case "Electric":
+      return "electricTypeColorDark textColorDarkGray border-white";
+
+    case "Dragon":
+      return "dragonTypeColorDark textColorLightGray";
+
+    case "Dark":
+      return "darkTypeColorDark textColorLightGray";
+
+    case "Bug":
+      return "bugTypeColorDark textColorLightGray";
+
+    default:
+      return "bg-[rgb(255,144,232)]";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
   if (variant === "cartbutton") return cartButtonColor(theme);
   if (variant === "productpagebgcolor") return productPageBgcolor(theme);
   if (variant === "sharebutton") return shareButtonColor(theme);
-
   if (variant === "bordercolor") return borderColor(theme);
+  if (variant === "headerbordercolor") return headerBorderColor(theme);
+  if (variant === "priceboxcolor") return priceBoxColor(theme);
 };
 
 export default useTheme;

@@ -29,10 +29,9 @@ function ProductPage() {
 
   const productpagebgcolor = useTheme(pokemon.type[0], "productpagebgcolor");
   const cartButtonColor = useTheme(pokemon.type[0], "cartbutton");
-
   const shareButtonColor = useTheme(pokemon.type[0], "sharebutton");
-
   const borderColor = useTheme(pokemon.type[0], "bordercolor");
+  const priceBoxColor = useTheme(pokemon.type[0], "priceboxcolor");
 
   return (
     <>
@@ -68,7 +67,7 @@ function ProductPage() {
                     className={`flex-1 border-r-[1px] border-solid ${borderColor} `}
                   >
                     <Tooltip position="right" text={`$${pokemon.speed}`}>
-                      <PriceBox className=" border-2 border-solid">
+                      <PriceBox className={`border-black ${priceBoxColor}`}>
                         ${pokemon.speed}
                       </PriceBox>
                     </Tooltip>

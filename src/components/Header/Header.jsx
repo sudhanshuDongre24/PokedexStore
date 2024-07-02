@@ -17,9 +17,7 @@ function Header() {
     : useTheme("Home", "headercolor");
 
   return (
-    <header
-      className={`sticky  top-0 border-solid border-b-[0.0625rem] z-30 ${headerColor} `}
-    >
+    <header className={`sticky top-0 border-solid z-30 ${headerColor} `}>
       <Container>
         <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
           {/* Logo */}
