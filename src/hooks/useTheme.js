@@ -360,6 +360,134 @@ function priceBoxColor(theme) {
   }
 }
 
+function buttonR(theme) {
+  switch (theme) {
+    case "Home":
+      return "whiteShadow whiteShadowAnimate bg-[#ff90e8] text-black";
+
+    case "Water":
+      return "waterTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Steel":
+      return "steelTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Rock":
+      return "rockTypeColorLight textColorLightGray whiteShadow whiteShadowAnimate border-black";
+
+    case "Psychic":
+      return "psychicTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Poison":
+      return "poisonTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Normal":
+      return "normalTypeColorLight textColorDarkGray border-black whiteShadowAnimate whiteShadow";
+
+    case "Ice":
+      return "iceTypeColorLight textColorDarkGray border-black blackShadowAnimate blackShadow";
+
+    case "Ground":
+      return "groundTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Grass":
+      return "grassTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Ghost":
+      return "ghostTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Flying":
+      return "flyingTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Fire":
+      return "fireTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Fighting":
+      return "fightingTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Fairy":
+      return "fairyTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Electric":
+      return "electricTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Dragon":
+      return "dragonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Dark":
+      return "darkTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate";
+
+    case "Bug":
+      return "bugTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    default:
+      return "bg-[#ff90e8] border-black whiteShadow whiteShadowAnimate";
+  }
+}
+
+function buttonL(theme) {
+  switch (theme) {
+    case "Home":
+      return "bgColorDark hover:bg-black textColorLightGray  whiteShadow whiteShadowAnimate";
+
+    case "Water":
+      return "waterTypeColorDark textColorDarkGray hover:border-black border-[rgb(36,36,35)] whiteShadow whiteShadowAnimate";
+
+    case "Steel":
+      return "steelTypeColorDark textColorDarkGray whiteShadow whiteShadowAnimate border-black";
+
+    case "Rock":
+      return "rockTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+
+    case "Psychic":
+      return "psychicTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Poison":
+      return "poisonTypeColorDark textColorDarkGray whiteShadow whiteShadowAnimate border-black";
+
+    case "Normal":
+      return "normalTypeColorDark textColorDarkGray border-black whiteShadowAnimate whiteShadow  ";
+
+    case "Ice":
+      return "iceTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Ground":
+      return "groundTypeColorDark textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Grass":
+      return "grassTypeColorDark textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Ghost":
+      return "ghostTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+
+    case "Flying":
+      return "flyingTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate ";
+
+    case "Fire":
+      return "fireTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Fighting":
+      return "fightingTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Fairy":
+      return "fairyTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+
+    case "Electric":
+      return "electricTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Dragon":
+      return "dragonTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Dark":
+      return "darkTypeColorDark textColorLightGray border-white whiteShadow whiteShadowAnimate";
+
+    case "Bug":
+      return "bugTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+
+    default:
+      return "bg-[rgb(36,36,35)] border-black whiteShadow whiteShadowAnimate";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
@@ -369,6 +497,8 @@ const useTheme = (theme, variant) => {
   if (variant === "bordercolor") return borderColor(theme);
   if (variant === "headerbordercolor") return headerBorderColor(theme);
   if (variant === "priceboxcolor") return priceBoxColor(theme);
+  if (variant === "buttonRcolor") return buttonR(theme);
+  if (variant === "buttonLcolor") return buttonL(theme);
 };
 
 export default useTheme;

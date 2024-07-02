@@ -10,11 +10,19 @@ function Header() {
   const navigate = useNavigate();
   const [showOverlay, setShowOverlay] = useState(false);
   const theme = useSelector((state) => state.pokemonTheme.theme);
-  const isHomePage = location.pathname.includes("/pokemon");
+  const isHomePage = !location.pathname.includes("/pokemon");
 
   const headerColor = isHomePage
-    ? useTheme(theme, "headercolor")
-    : useTheme("Home", "headercolor");
+    ? useTheme("Home", "headercolor")
+    : useTheme(theme, "headercolor");
+
+  const buttonRColor = isHomePage
+    ? useTheme("Home", "buttonRcolor")
+    : useTheme(theme, "buttonRcolor");
+
+  const buttonLColor = isHomePage
+    ? useTheme("Home", "buttonLcolor")
+    : useTheme(theme, "buttonLcolor");
 
   return (
     <header className={`sticky top-0 border-solid z-30 ${headerColor} `}>
@@ -46,16 +54,10 @@ function Header() {
 
           {/* Button Section */}
           <div className="ml-2 flex items-center justify-center w-fit-content">
-            <Button
-              ariaLabel="SignIn Button"
-              className=" text-[#dddddd] hover:bg-black hover:text-white"
-            >
+            <Button ariaLabel="SignIn Button" className={`${buttonLColor} `}>
               SignIn
             </Button>
-            <Button
-              ariaLabel="Login Button"
-              className=" ml-6 bg-[rgb(221,221,221)] text-black hover:bg-[#1452e3] hover:text-white "
-            >
+            <Button ariaLabel="Login Button" className={`ml-6 ${buttonRColor}`}>
               LogIn
             </Button>
           </div>
