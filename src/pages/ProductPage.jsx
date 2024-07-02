@@ -30,38 +30,54 @@ function ProductPage() {
   const productpagebgcolor = useTheme(pokemon.type[0], "productpagebgcolor");
   const cartButtonColor = useTheme(pokemon.type[0], "cartbutton");
 
+  const shareButtonColor = useTheme(pokemon.type[0], "sharebutton");
+
+  const borderColor = useTheme(pokemon.type[0], "bordercolor");
+
   return (
     <>
       <ProductPageTopHeader {...pokemon} />
       <div className={` text-inherit py-20 min-h-screen ${productpagebgcolor}`}>
         <Container>
-          <div className="w-full border-2 border-solid border-black  rounded">
+          <div
+            className={`w-full border-2 border-solid   rounded ${borderColor}`}
+          >
             {/* Image */}
-            <div className="border-b-2 border-solid border-black bg-white ">
+            <div className={`border-b-2 border-solid ${borderColor}`}>
               <ImageComponent
                 altText={`pokemon-name: ${pokemon.name},pokemon-id: ${pokemon.id}`}
                 id={pokemon.id}
-                className="w-full h-[670px] p-8  bg-cover"
+                className="w-full h-[670px] p-8 bg-cover"
                 type={pokemon.type}
               />
             </div>
             {/* content */} {/* Left Side */}
-            <div className="flex justify-between flex-col sm:flex-row   h-full">
-              <section className="border-b-[1px] sm:border-r-[1px]  border-solid border-black flex-[2]">
-                <div className="border-b-[1px] solid border-black py-2">
+            <div className="flex justify-between flex-col sm:flex-row  h-full">
+              <section
+                className={`border-b-[1px] sm:border-r-[1px]  border-solid  flex-[2] ${borderColor}`}
+              >
+                <div
+                  className={`border-b-[1px] border-solid  py-2 ${borderColor}`}
+                >
                   <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
                 </div>
-                <section className="px-6  flex justify-between items-center border-b-[1px] border-solid border-black ">
-                  <div className="flex-1 border-r-[1px] border-solid border-black">
+                <section
+                  className={`px-6  flex justify-between items-center border-b-[1px] border-solid ${borderColor}`}
+                >
+                  <div
+                    className={`flex-1 border-r-[1px] border-solid ${borderColor} `}
+                  >
                     <Tooltip position="right" text={`$${pokemon.speed}`}>
-                      <PriceBox className="border-black border-2 border-solid">
+                      <PriceBox className=" border-2 border-solid">
                         ${pokemon.speed}
                       </PriceBox>
                     </Tooltip>
                   </div>
-                  <div className="flex-[1] flex py-4 px-8 border-black border-r-[1px] border-solid items-center gap-2">
+                  <div
+                    className={`flex-[1] flex py-4 px-8  border-r-[1px] border-solid items-center gap-2 ${borderColor}`}
+                  >
                     <img
-                      className=" h-5 w-[6] border-black border-solid border-[2px] rounded-full"
+                      className=" h-5 w-[6]  border-solid border-[2px] rounded-full"
                       src="/pngegg.png"
                       alt=""
                     />
@@ -77,19 +93,25 @@ function ProductPage() {
 
               {/* Right side */}
               <div className="flex-[1]">
-                <div className="border-b-[1px] border-solid border-black p-6 ">
+                <div
+                  className={`border-b-[1px] border-solid  p-6 ${borderColor}`}
+                >
                   <Button className={`w-full ${cartButtonColor} `}>
                     Add to cart
                   </Button>
                   <div className="flex items-center justify-between mt-6 gap-3  ">
-                    <Button className="border-black border-solid border-2 flex justify-between items-center flex-[6] w-full ">
+                    <Button
+                      className={`border-solid border-2 flex justify-between items-center flex-[6] w-full ${borderColor} `}
+                    >
                       <span>Add to wish list</span>
                       <span className="textColorDarkGray font-extralight">
                         &#x0056;
                       </span>
                     </Button>
                     <Tooltip text="share" className="bg-black text-white">
-                      <Button className="border-black border-solid border-2 flex-[1]">
+                      <Button
+                        className={`border-solid border-2 flex-[1] ${shareButtonColor}`}
+                      >
                         ✔
                       </Button>
                     </Tooltip>

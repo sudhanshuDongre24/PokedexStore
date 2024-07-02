@@ -3,7 +3,7 @@ import React from "react";
 function Button({
   children,
   onClick,
-  className,
+  className = "",
   type = "button",
   ariaLabel = "",
 }) {

@@ -215,11 +215,70 @@ function productPageBgcolor(theme) {
   }
 }
 
+function shareButtonColor(theme) {
+  switch (theme) {
+    case "Normal":
+    case "Ice":
+    case "Electric":
+      return "whiteShadow whiteShadowAnimate border-white hover:border-black";
+
+    case "Grass":
+    case "Water":
+    case "Steel":
+    case "Flying":
+    case "Fighting":
+    case "Rock":
+    case "Poison":
+    case "Fairy":
+    case "Psychic":
+    case "Fire":
+    case "Ghost":
+    case "Ground":
+    case "Dragon":
+    case "Bug":
+    case "Dark":
+      return "border-black blackShadow blackShadowAnimate";
+    default:
+      return "border-black blackShadow blackShadowAnimate";
+  }
+}
+
+function borderColor(theme) {
+  switch (theme) {
+    case "Normal":
+    case "Ice":
+    case "Electric":
+      return "border-white";
+
+    case "Grass":
+    case "Water":
+    case "Steel":
+    case "Flying":
+    case "Fighting":
+    case "Rock":
+    case "Poison":
+    case "Fairy":
+    case "Psychic":
+    case "Fire":
+    case "Ghost":
+    case "Ground":
+    case "Dragon":
+    case "Bug":
+    case "Dark":
+      return "border-black";
+    default:
+      return "border-black";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
   if (variant === "cartbutton") return cartButtonColor(theme);
   if (variant === "productpagebgcolor") return productPageBgcolor(theme);
+  if (variant === "sharebutton") return shareButtonColor(theme);
+
+  if (variant === "bordercolor") return borderColor(theme);
 };
 
 export default useTheme;

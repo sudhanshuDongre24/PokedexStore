@@ -4,7 +4,7 @@ function Input({
   placeholder = "",
   type = "text",
   onChange,
-  className,
+  className = "",
   onFocus,
   onKeyDown,
   value,
