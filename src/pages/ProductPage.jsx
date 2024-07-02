@@ -119,7 +119,7 @@ function ProductPage() {
                 </div>
 
                 <RankingComponent {...pokemon} />
-                <CommentSection />
+                <CommentSection {...pokemon} />
               </div>
             </div>
           </div>

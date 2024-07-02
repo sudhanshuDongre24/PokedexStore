@@ -1,6 +1,8 @@
 import React from "react";
+import useTheme from "../../hooks/useTheme";
 
-function CommentSection() {
+function CommentSection({ type }) {
+  const borderColor = useTheme(type[0], "bordercolor");
   return (
     <div className="px-4 pt-4 pb-8">
       <h2 className="text-center py-4 font-semibold text-[16px]">Comment</h2>
@@ -18,7 +20,7 @@ function CommentSection() {
           </span>
         </div>
       </div>
-      <hr className="border-black" />
+      <hr className={`${borderColor}`} />
 
       <div className="flex flex-col gap-2 mb-6 mt-6">
         <span>⭐⭐⭐⭐⭐</span>
@@ -33,7 +35,7 @@ function CommentSection() {
           </span>
         </div>
       </div>
-      <hr className="border-black" />
+      <hr className={`${borderColor}`} />
 
       <div className="flex flex-col gap-2 mb-6 mt-6">
         <span>⭐⭐⭐⭐⭐</span>
@@ -48,7 +50,7 @@ function CommentSection() {
           </span>
         </div>
       </div>
-      <hr className="border-black" />
+      <hr className={`${borderColor}`} />
       <div className="flex flex-col gap-2 mb-6 mt-6">
         <span>⭐⭐⭐⭐⭐</span>
         <p>&#34;Lorem ipsum dolor sit amet.&#34;</p>
