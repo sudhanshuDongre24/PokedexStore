@@ -28,6 +28,7 @@ function ProductPage() {
   }, [pathname]);
 
   const productpagebgcolor = useTheme(pokemon.type[0], "productpagebgcolor");
+  const cartButtonColor = useTheme(pokemon.type[0], "cartbutton");
 
   return (
     <>
@@ -78,7 +79,9 @@ function ProductPage() {
               {/* Right side */}
               <div className="flex-[1]">
                 <div className="border-b-[1px] border-solid border-black p-6 ">
-                  <Button className="bg-[#ff90e8] w-full ">Add to cart</Button>
+                  <Button className={`w-full ${cartButtonColor} `}>
+                    Add to cart
+                  </Button>
                   <div className="flex items-center justify-between mt-6 gap-3  ">
                     <Button className="border-black border-solid border-2 flex justify-between items-center flex-[6] w-full ">
                       <span>Add to wish list</span>

@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 function bgColor(type) {
   switch (type.toLowerCase()) {
     case "water":
@@ -127,11 +125,65 @@ function headerColor(theme) {
 
 function cartButtonColor(theme) {
   switch (theme) {
+    case "Home":
+      return "bg-[rgb(36,36,35)] textColorLightGray ";
+
+    case "Water":
+      return "waterTypeColorLight textColorDarkGray blackShadow blackShadowAnimate border-black";
+
+    case "Steel":
+      return "steelTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Rock":
+      return "rockTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate";
+
+    case "Psychic":
+      return "psychicTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Poison":
+      return "poisonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate ";
+
+    case "Flying":
+      return "flyingTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Ghost":
+      return "ghostTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate ";
+
+    case "Electric":
+      return "electricTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+
     case "Grass":
-      return "";
+      return "grassTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Ground":
+      return "groundTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate";
+
+    case "Ice":
+      return "iceTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+
+    case "Normal":
+      return "normalTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+
+    case "Fire":
+      return "fireTypeColorDark textColorLightGray border-black hover:border-white blackShadow blackShadowAnimate";
+
+    case "Bug":
+      return "bugTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Fighting":
+      return "fightingTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Fairy":
+      return "fairyTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate hover:border-white";
+
+    case "Dragon":
+      return "dragonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+
+    case "Dark":
+      return "darkTypeColorLight textColorDarkGray border-white blackShadow blackShadowAnimate";
 
     default:
-      return "text-black";
+      return "bg-[rgba(254,255,254,255)] textColorDarkGray ";
   }
 }
 
@@ -167,7 +219,6 @@ const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
   if (variant === "cartbutton") return cartButtonColor(theme);
-  if (variant === "productpageHeaderbgcolor") return productpagebgcolor(theme);
   if (variant === "productpagebgcolor") return productPageBgcolor(theme);
 };
 
