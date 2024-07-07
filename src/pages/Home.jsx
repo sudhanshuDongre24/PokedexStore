@@ -8,11 +8,11 @@ import { changeTheme } from "../store/themeSlice";
 
 const fetchPokemonData = async (dispatch, setLoader) => {
   try {
-    // const { data } = await supabaseService.getPokemonData();
-    const response = await axios.get("/pokemon.json");
-    // console.log(response.data);
-    dispatch(addPokemonData(response.data));
-    // dispatch(addPokemonData(data[0].data));
+    // const response = await axios.get("/pokemon.json");
+    // dispatch(addPokemonData(response.data));
+    const { data } = await supabaseService.getPokemonData();
+    // console.log(data);
+    dispatch(addPokemonData(data[0].data));
     setLoader(true);
   } catch (error) {
     console.log("Home Component :: fetchPokemonData :: error ", error);
