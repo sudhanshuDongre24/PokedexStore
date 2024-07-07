@@ -488,6 +488,134 @@ function buttonL(theme) {
   }
 }
 
+function inputSearchTheme(theme) {
+  switch (theme) {
+    case "pokemon":
+      return "bg-black text-white focus:border-[#ff90e8] whiteShadow ";
+
+    case "Water":
+      return "bg-black text-white whiteShadow focus:border-[#86a8fc]";
+
+    case "Steel":
+      return "bg-black text-white whiteShadow focus:border-[#43bd85]";
+
+    case "Rock":
+      return "bg-black text-white whiteShadow focus:border-[#8b3f20]";
+
+    case "Psychic":
+      return "bg-black text-white whiteShadow focus:border-[#f91c90]";
+
+    case "Poison":
+      return "bg-black text-white whiteShadow focus:border-[#9a68d9]";
+
+    case "Normal":
+      return "bg-black text-white whiteShadow focus:border-[#ca99a6]";
+
+    case "Ice":
+      return "bg-white text-black blackShadow focus:border-[#d6f1fb]";
+
+    case "Ground":
+      return "bg-white text-black blackShadow focus:border-[#6e481e]";
+
+    case "Grass":
+      return "bg-black text-white whiteShadow focus:border-[#26ca4f]";
+
+    case "Ghost":
+      return "bg-black text-white whiteShadow focus:border-[#906691]";
+
+    case "Flying":
+      return "bg-black text-white whiteShadow focus:border-[#92b2c6]";
+
+    case "Fire":
+      return "bg-black text-white whiteShadow focus:border-[#fc4d5a]";
+
+    case "Fighting":
+      return "bg-black text-white whiteShadow focus:border-[#ee6038]";
+
+    case "Fairy":
+      return "bg-black text-white whiteShadow focus:border-[#ea1369]";
+
+    case "Electric":
+      return "bg-white text-black blackShadow focus:border-[#fbfa73]";
+
+    case "Dragon":
+      return "bg-black text-white whiteShadow focus:border-[#60cbd7]";
+
+    case "Dark":
+      return "bg-black text-white whiteShadow focus:border-[#5b5879]";
+
+    case "Bug":
+      return "bg-black text-white whiteShadow focus:border-[#3b9851]";
+
+    default:
+      return "bg-black text-white whiteShadow focus:border-[#8b3f20]";
+  }
+}
+
+function inputSeachIconTheme(theme) {
+  switch (theme) {
+    case "pokemon":
+      return "#fff";
+
+    case "Water":
+      return "#1452e3";
+
+    case "Steel":
+      return "#5f756d";
+
+    case "Rock":
+      return "#48180b";
+
+    case "Psychic":
+      return "#a12c68";
+
+    case "Poison":
+      return "#5d2d86";
+
+    case "Normal":
+      return "#77505a";
+
+    case "Ice":
+      return "#87d2f4";
+
+    case "Ground":
+      return "#a9712d";
+
+    case "Grass":
+      return "#137b3d";
+
+    case "Ghost":
+      return "#34326b";
+
+    case "Flying":
+      return "#4a677d";
+
+    case "Fire":
+      return "#aa1e23";
+
+    case "Fighting":
+      return "#984024";
+
+    case "Fairy":
+      return "#971944";
+
+    case "Electric":
+      return "#e3e32b";
+
+    case "Dragon":
+      return "#448a94";
+
+    case "Dark":
+      return "#5b5879";
+
+    case "Bug":
+      return "#1d4a27";
+
+    default:
+      return "#fff";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
@@ -499,6 +627,8 @@ const useTheme = (theme, variant) => {
   if (variant === "priceboxcolor") return priceBoxColor(theme);
   if (variant === "buttonRcolor") return buttonR(theme);
   if (variant === "buttonLcolor") return buttonL(theme);
+  if (variant === "inputsearch") return inputSearchTheme(theme);
+  if (variant === "inputsearchicon") return inputSeachIconTheme(theme);
 };
 
 export default useTheme;

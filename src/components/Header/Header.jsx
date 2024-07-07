@@ -8,6 +8,7 @@ import { changeTheme } from "../../store/themeSlice";
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [showOverlay, setShowOverlay] = useState(false);
   const theme = useSelector((state) => state.pokemonTheme.theme);
   const isHomePage = !location.pathname.includes("/pokemon");
