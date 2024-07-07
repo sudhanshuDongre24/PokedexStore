@@ -1,31 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, InputSearch } from "..";
 import { useLocation, useNavigate } from "react-router-dom";
+import useTheme from "../../hooks/useTheme";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../../store/themeSlice";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [showOverlay, setShowOverlay] = useState(false);
-  let isHomePage = !location.pathname.includes("/pokemon");
+  const theme = useSelector((state) => state.pokemonTheme.theme);
+  const isHomePage = !location.pathname.includes("/pokemon");
+
+  const headerColor = isHomePage
+    ? useTheme("Home", "headercolor")
+    : useTheme(theme, "headercolor");
+
+  const buttonRColor = isHomePage
+    ? useTheme("Home", "buttonRcolor")
+    : useTheme(theme, "buttonRcolor");
+
+  const buttonLColor = isHomePage
+    ? useTheme("Home", "buttonLcolor")
+    : useTheme(theme, "buttonLcolor");
 
   return (
-    <header
-      className={`sticky  top-0 border-solid border-b-[0.0625rem] z-30  ${
-        isHomePage
-          ? "bg-[#242423] border-b-[rgba(221,221,221,0.35)]"
-          : "bg-white border-b-[black]"
-      }`}
-    >
+    <header className={`sticky top-0 border-solid z-30 ${headerColor} `}>
       <Container>
         <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
           {/* Logo */}
           <h1
-            className={` text-5xl cursor-pointer  font-extrabold ${
-              isHomePage ? "text-[#dddddd]" : "text-black"
-            }`}
+            className={` text-5xl cursor-pointer font-extrabold`}
             onClick={() => navigate("/")}
           >
-            Pokemon
+            Pokedex
           </h1>
 
           {showOverlay && (
@@ -46,16 +55,10 @@ function Header() {
 
           {/* Button Section */}
           <div className="ml-2 flex items-center justify-center w-fit-content">
-            <Button
-              ariaLabel="SignIn Button"
-              className=" text-[#dddddd] hover:bg-black hover:text-white"
-            >
+            <Button ariaLabel="SignIn Button" className={`${buttonLColor} `}>
               SignIn
             </Button>
-            <Button
-              ariaLabel="Login Button"
-              className=" ml-6 bg-[rgb(221,221,221)] text-black hover:bg-[#ff90e8] "
-            >
+            <Button ariaLabel="Login Button" className={`ml-6 ${buttonRColor}`}>
               LogIn
             </Button>
           </div>

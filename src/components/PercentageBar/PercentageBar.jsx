@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Tooltip from "../Tooltip/Tooltip";
+import useTheme from "../../hooks/useTheme";
 
 function PercentageBar(prop) {
   const [showValue, setShowValue] = useState(false);
   const [key, value] = Object.entries(prop)[0];
+  const borderColor = useTheme(prop.type, "bordercolor");
+
+  const bgColor = useTheme(prop.type, "headercolor");
 
   let avgValue = 0;
   const maxHpValue = 255;
@@ -53,16 +57,18 @@ function PercentageBar(prop) {
     >
       <h2 className="">{key}:</h2>
 
-      <div className="w-full border-black border-solid border-[1px] h-6  rounded">
+      <div
+        className={`w-full border-solid border-[1px] h-6 rounded ${borderColor}`}
+      >
         <div
           style={{ width: avgValue + "%" }}
-          className={`bg-[#ff90e8] h-full w-full rounded-r `}
+          className={`h-full w-full rounded-r ${bgColor}`}
         ></div>
       </div>
 
       <h2>{avgValue}%</h2>
       {showValue && (
-        <div className="absolute bg-black rounded text-white px-2 py-1 left-[-20%] text-nowrap">
+        <div className="absolute z-[49] bg-black rounded text-white px-2 mt-6 py-1 left-[-30%] text-nowrap">
           {key}: {value} pts
         </div>
       )}

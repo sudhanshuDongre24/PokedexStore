@@ -9,6 +9,11 @@ import Input from "./Input/Input";
 import PriceBox from "./PriceBox/PriceBox";
 import PercentageBar from "./PercentageBar/PercentageBar";
 import Tooltip from "./Tooltip/Tooltip";
+import ProductPageTopHeader from "./ProductPageTopHeader/ProductPageTopHeader";
+import RankingComponent from "./RankingComponent/RankingComponent";
+import ProductDetails from "./ProductDetails/ProductDetails";
+import CommentSection from "./CommentSection/CommentSection";
+import ImageComponent from "./ImageComponent/ImageComponent";
 
 export {
   Header,
@@ -22,4 +27,9 @@ export {
   PriceBox,
   PercentageBar,
   Tooltip,
+  ProductPageTopHeader,
+  RankingComponent,
+  ProductDetails,
+  CommentSection,
+  ImageComponent,
 };

@@ -1,25 +1,26 @@
 import React from "react";
-import { ImageLoader } from "image-loader-spinner";
 import { useNavigate } from "react-router-dom";
-import PriceBox from "../PriceBox/PriceBox";
-import Tooltip from "../Tooltip/Tooltip";
+import { ImageComponent, PriceBox, Tooltip } from "../";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../../store/themeSlice";
 
 function Card({ id, name, type, speed }) {
   const navigate = useNavigate();
-  ImageLoader("/pngegg.png", 200);
-
+  const dispatch = useDispatch();
   return (
     <div
       className="border-[0.0625rem] rounded border-[rgba(221,221,221,1)] bg-black border-solid w-fit whiteShadow"
-      onClick={() => navigate(`pokemon/${id}`)}
+      onClick={() => {
+        navigate(`pokemon/${id}`);
+        dispatch(changeTheme(type[0]));
+      }}
     >
       <div className="">
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-          alt={`pokemon name: ${name},Pokemon Id: ${id}`}
-          className="w-[210px] mx-auto p-6 z-50 bg-white"
-          spinner="true"
-          fadein="true"
+        <ImageComponent
+          className="w-[210px]"
+          id={id}
+          altText={`pokemon-name: ${name},pokemon-id: ${id}`}
+          type={type}
         />
       </div>
 

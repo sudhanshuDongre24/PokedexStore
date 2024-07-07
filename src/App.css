@@ -15,8 +15,11 @@ body {
 
 .spinner_container {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-items: center;
   background-color: black;
+  margin: auto auto;
 }
 
 .spinner {
@@ -56,6 +59,23 @@ body {
   animation-delay: 24s;
 }
 
+.blackShadow {
+  transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.blackShadow:hover {
+  box-shadow: 0.3rem 0.3rem 0 rgba(36, 36, 35, 1);
+}
+
+.blackShadow:active {
+  box-shadow: 0;
+}
+
+.blackShadowAnimate:hover {
+  transform: translate(-0.25rem, -0.25rem);
+  animation-delay: 24s;
+}
+
 .active {
   opacity: 1 !important;
   transition: 0.5s cubic-bezier(0.45, 0.85, 0.5, 1);
@@ -64,4 +84,158 @@ body {
 .activeli {
   background: white;
   color: black;
+}
+
+.waterTypeColorLight {
+  background-color: #86a8fc;
+}
+.waterTypeColorDark {
+  background-color: #1452e3;
+}
+
+.steelTypeColorLight {
+  background-color: #43bd85;
+}
+.steelTypeColorDark {
+  background-color: #5f756d;
+}
+
+.rockTypeColorLight {
+  background-color: #8b3f20;
+}
+.rockTypeColorDark {
+  background-color: #48180b;
+}
+
+.psychicTypeColorLight {
+  background-color: #f91c90;
+}
+.psychicTypeColorDark {
+  background-color: #a12c68;
+}
+
+.poisonTypeColorLight {
+  background-color: #9a68d9;
+}
+.poisonTypeColorDark {
+  background-color: #5d2d86;
+}
+
+.normalTypeColorLight {
+  background-color: #ca99a6;
+}
+.normalTypeColorDark {
+  background-color: #77505a;
+}
+
+.iceTypeColorLight {
+  background-color: #d6f1fb;
+}
+.iceTypeColorDark {
+  background-color: #87d2f4;
+}
+
+.groundTypeColorLight {
+  background-color: #6e481e;
+}
+.groundTypeColorDark {
+  background-color: #a9712d;
+}
+
+.grassTypeColorLight {
+  background-color: #26ca4f;
+}
+.grassTypeColorDark {
+  background-color: #137b3d;
+}
+
+.ghostTypeColorLight {
+  background-color: #906691;
+}
+.ghostTypeColorDark {
+  background-color: #34326b;
+}
+
+.flyingTypeColorLight {
+  background-color: #92b2c6;
+}
+.flyingTypeColorDark {
+  background-color: #4a677d;
+}
+
+.fireTypeColorLight {
+  background-color: #fc4d5a;
+}
+.fireTypeColorDark {
+  background-color: #aa1e23;
+}
+
+.fightingTypeColorLight {
+  background-color: #ee6038;
+}
+.fightingTypeColorDark {
+  background-color: #984024;
+}
+
+.fairyTypeColorLight {
+  background-color: #ea1369;
+}
+.fairyTypeColorDark {
+  background-color: #971944;
+}
+
+.electricTypeColorLight {
+  background-color: #fbfa73;
+}
+.electricTypeColorDark {
+  background-color: #e3e32b;
+}
+
+.dragonTypeColorLight {
+  background-color: #60cbd7;
+}
+.dragonTypeColorDark {
+  background-color: #448a94;
+}
+
+.darkTypeColorLight {
+  background-color: #5b5879;
+}
+.darkTypeColorDark {
+  background-color: #040706;
+}
+
+.bugTypeColorLight {
+  background-color: #3b9851;
+}
+.bugTypeColorDark {
+  background-color: #1d4a27;
+}
+
+.bgColorDarkGray {
+  background-color: rgb(36, 36, 35);
+}
+
+.bgColorWhite {
+  background-color: #fff;
+}
+
+.textColorLightGray {
+  color: rgba(221, 221, 221, 1);
+}
+
+.textColorDarkGray {
+  color: rgba(36, 36, 35, 1);
+}
+
+.borderBottomLightGray {
+  border-bottom-color: rgba(221, 221, 221, 0.35);
+}
+
+.borderBottomDarkGray {
+  border-bottom-color: rgba(36, 36, 35, 0.35);
+}
+
+.borderBottomBlack {
+  border-bottom-color: black;
 }
