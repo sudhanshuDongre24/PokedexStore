@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useTheme from "../../hooks/useTheme";
 import { changeTheme } from "../../store/themeSlice";
 
-function InputSearch({ showOverlay, setShowOverlay }) {
+function InputSearch({ showOverlay, setShowOverlay, theme = "" }) {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,7 +14,6 @@ function InputSearch({ showOverlay, setShowOverlay }) {
   const [select, setSelect] = useState(-1);
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const selectSearch = useSelector((state) => state.pokemonSearch.search);
-  const { theme } = useSelector((state) => state.pokemonTheme);
   const isHomePage = !location.pathname.includes("/pokemon");
 
   const inputSearchTheme = isHomePage

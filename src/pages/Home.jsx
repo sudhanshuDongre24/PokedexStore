@@ -5,28 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import supabaseService from "../supabase/supabaseClient";
 import axios from "axios";
 import { changeTheme } from "../store/themeSlice";
-
-const fetchPokemonData = async (dispatch, setLoader) => {
-  try {
-    // const response = await axios.get("/pokemon.json");
-    // dispatch(addPokemonData(response.data));
-    const { data } = await supabaseService.getPokemonData();
-    // console.log(data);
-    dispatch(addPokemonData(data[0].data));
-    setLoader(true);
-  } catch (error) {
-    console.log("Home Component :: fetchPokemonData :: error ", error);
-  }
-};
+import { useLocation } from "react-router-dom";
 
 function Home() {
-  const [loader, setLoader] = useState(false);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    fetchPokemonData(dispatch, setLoader);
-  }, []);
   const pokemon = useSelector((state) => state.pokemonData.data);
-
+  const loader = useSelector((state) => state.pokemonData.status);
   return (
     <div className="my-10 text-white bg-inherit z-10">
       <Container>

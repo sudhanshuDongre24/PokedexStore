@@ -617,6 +617,10 @@ function inputSeachIconTheme(theme) {
 }
 
 const useTheme = (theme, variant) => {
+  if (!theme) {
+    return;
+  }
+
   if (variant === "bgcolor") return bgColor(theme[0]);
   if (variant === "headercolor") return headerColor(theme);
   if (variant === "cartbutton") return cartButtonColor(theme);
