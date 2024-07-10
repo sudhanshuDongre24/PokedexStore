@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         path: "/pokemon/:id",
         element: <ProductPage />,
       },
+      {
+        path: "*",
+        element: "",
+      },
     ],
   },
 ]);
