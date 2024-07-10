@@ -21,7 +21,6 @@ const fetchPokemonData = async (dispatch) => {
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("yes");
     fetchPokemonData(dispatch);
   }, [dispatch]);
   return (
