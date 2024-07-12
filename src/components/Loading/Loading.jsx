@@ -7,8 +7,6 @@ function Loading() {
     setTimer(true);
   }, 10000);
 
-  console.log(timer);
-
   return (
     <div className="w-full min-h-screen flex items-center justify-center flex-col gap-0">
       <img src="/loader.svg" alt="" className=" w-[200px] mt-[-250px]" />
