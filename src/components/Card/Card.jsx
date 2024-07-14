@@ -26,7 +26,9 @@ function Card({ id, name, type, speed }) {
 
       <hr className="border-[rgb(221,221,221)] border-[0.0625rem] border-solid" />
 
-      <h2 className="text-lg mt-4 mb-2 pl-2">{name}</h2>
+      <h2 className=" font-headingMedium italic font-medium text-xl  mt-4 mb-2 pl-2">
+        {name}
+      </h2>
       <h3 className="pl-2 mb-2 text-lg ">{type.join(", ")}</h3>
       <div className="pl-2 flex items-center gap-2 justify-start mb-2 ">
         <img

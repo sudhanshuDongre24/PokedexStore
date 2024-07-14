@@ -62,7 +62,9 @@ function ProductPage() {
                   <div
                     className={`border-b-[1px] border-solid  py-2 ${borderColor}`}
                   >
-                    <h1 className="text-3xl ml-4 my-4">{pokemon.name}</h1>
+                    <h1 className="text-3xl ml-4 my-4 font-headingMedium italic font-medium">
+                      {pokemon.name}
+                    </h1>
                   </div>
                   <section
                     className={`px-6  flex justify-between items-center border-b-[1px] border-solid ${borderColor}`}

@@ -10,9 +10,9 @@ function ProductPageTopHeader({ name, speed, type }) {
 
   return (
     <header
-      className={`sticky z-[29] top-[114px] h-full py-2 border-b-[1px] border-t-[1px] ${productHeaderBgColor} ${headerBorderColor} `}
+      className={`sticky z-[29] top-[115px] h-full pt-3 pb-2 border-b-[1px] border-t-[1px] ${productHeaderBgColor} ${headerBorderColor}`}
     >
-      <Container className="flex items-center justify-between">
+      <Container className="flex items-center justify-between ">
         <div className="flex items-center justify-between gap-8">
           <Tooltip position="right" text={`$ ${speed}`}>
             <PriceBox className={`border-black py-[4px] ${priceBoxColor}`}>
@@ -20,7 +20,9 @@ function ProductPageTopHeader({ name, speed, type }) {
             </PriceBox>
           </Tooltip>
 
-          <h1 className=" mb-1 font-semibold  text-2xl">{name}</h1>
+          <h1 className="mb-1 font-headingMedium italic font-medium text-3xl">
+            {name}
+          </h1>
         </div>
         <div className="flex justify-between text-center items-center gap-2">
           <span>⭐⭐⭐⭐⭐ 7 rating</span>

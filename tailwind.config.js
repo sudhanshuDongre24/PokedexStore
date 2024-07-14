@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: "Bebas Neue, sans-seri",
+        headingTop: "Bebas Neue, sans-seri",
+        headingMedium: "Roboto, sans-serif",
+        textNormal: "",
       },
     },
   },

@@ -36,7 +36,7 @@ function Header() {
           <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
             {/* Logo */}
             <h1
-              className={` text-6xl cursor-pointer  font-heading mt-2`}
+              className={` text-6xl cursor-pointer font-headingTop mt-2`}
               onClick={() => navigate("/")}
             >
               Pokedex
