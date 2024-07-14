@@ -20,7 +20,6 @@ import useTheme from "../hooks/useTheme";
 function ProductPage() {
   const { id } = useParams();
   const { pathname } = useLocation();
-  const dispatch = useDispatch();
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const loadingStatus = useSelector((state) => state.pokemonData.status);
 
