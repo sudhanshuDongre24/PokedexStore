@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         headingTop: "Bebas Neue, sans-seri",
         headingMedium: "Roboto, sans-serif",
-        textNormal: "",
+        textNormal: "Open Sans, sans-serif",
       },
     },
   },
