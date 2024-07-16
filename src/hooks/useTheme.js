@@ -129,61 +129,61 @@ function cartButtonColor(theme) {
       return "bg-[rgb(36,36,35)] textColorLightGray ";
 
     case "Water":
-      return "waterTypeColorLight textColorDarkGray blackShadow blackShadowAnimate border-black";
+      return "waterTypeColorLight textColorDarkGray blackShadow shadowAnimate border-black";
 
     case "Steel":
-      return "steelTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "steelTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Rock":
-      return "rockTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate";
+      return "rockTypeColorLight textColorLightGray border-black blackShadow shadowAnimate";
 
     case "Psychic":
-      return "psychicTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "psychicTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Poison":
-      return "poisonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate ";
+      return "poisonTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate ";
 
     case "Flying":
-      return "flyingTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "flyingTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Ghost":
-      return "ghostTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate ";
+      return "ghostTypeColorLight textColorLightGray border-black blackShadow shadowAnimate ";
 
     case "Electric":
-      return "electricTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+      return "electricTypeColorLight textColorDarkGray border-white whiteShadow shadowAnimate hover:border-black";
 
     case "Grass":
-      return "grassTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "grassTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Ground":
-      return "groundTypeColorLight textColorLightGray border-black blackShadow blackShadowAnimate";
+      return "groundTypeColorLight textColorLightGray border-black blackShadow shadowAnimate";
 
     case "Ice":
-      return "iceTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+      return "iceTypeColorLight textColorDarkGray border-white whiteShadow shadowAnimate hover:border-black";
 
     case "Normal":
-      return "normalTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate hover:border-black";
+      return "normalTypeColorLight textColorDarkGray border-white whiteShadow shadowAnimate hover:border-black";
 
     case "Fire":
-      return "fireTypeColorDark textColorLightGray border-black hover:border-white blackShadow blackShadowAnimate";
+      return "fireTypeColorDark textColorLightGray border-black hover:border-white blackShadow shadowAnimate";
 
     case "Bug":
-      return "bugTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "bugTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Fighting":
-      return "fightingTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "fightingTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Fairy":
-      return "fairyTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate hover:border-white";
+      return "fairyTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate hover:border-white";
 
     case "Dragon":
-      return "dragonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "dragonTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Dark":
-      return "darkTypeColorLight textColorDarkGray border-white blackShadow blackShadowAnimate";
+      return "darkTypeColorLight textColorDarkGray border-white blackShadow shadowAnimate";
 
     default:
-      return "bg-[rgba(254,255,254,255)] textColorDarkGray ";
+      return "bg-[rgba(254,255,254,255)] textColorDarkGray blackShadow shadowAnimate ";
   }
 }
 
@@ -220,7 +220,7 @@ function shareButtonColor(theme) {
     case "Normal":
     case "Ice":
     case "Electric":
-      return "whiteShadow whiteShadowAnimate border-white hover:border-black";
+      return "whiteShadow shadowAnimate border-white hover:border-black";
 
     case "Grass":
     case "Water":
@@ -237,9 +237,9 @@ function shareButtonColor(theme) {
     case "Dragon":
     case "Bug":
     case "Dark":
-      return "border-black blackShadow blackShadowAnimate";
+      return "border-black blackShadow shadowAnimate";
     default:
-      return "border-black blackShadow blackShadowAnimate";
+      return "border-black blackShadow shadowAnimate";
   }
 }
 
@@ -363,128 +363,128 @@ function priceBoxColor(theme) {
 function buttonR(theme) {
   switch (theme) {
     case "Home":
-      return "whiteShadow whiteShadowAnimate bg-[#ff90e8] text-black";
+      return "whiteShadow shadowAnimate bg-[#ff90e8] text-black";
 
     case "Water":
-      return "waterTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "waterTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Steel":
-      return "steelTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "steelTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Rock":
-      return "rockTypeColorLight textColorLightGray whiteShadow whiteShadowAnimate border-black";
+      return "rockTypeColorLight textColorLightGray whiteShadow shadowAnimate border-black";
 
     case "Psychic":
-      return "psychicTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "psychicTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Poison":
-      return "poisonTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "poisonTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Normal":
-      return "normalTypeColorLight textColorDarkGray border-black whiteShadowAnimate whiteShadow";
+      return "normalTypeColorLight textColorDarkGray border-black shadowAnimate whiteShadow";
 
     case "Ice":
-      return "iceTypeColorLight textColorDarkGray border-black blackShadowAnimate blackShadow";
+      return "iceTypeColorLight textColorDarkGray border-black shadowAnimate blackShadow";
 
     case "Ground":
-      return "groundTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "groundTypeColorLight textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Grass":
-      return "grassTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "grassTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Ghost":
-      return "ghostTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "ghostTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Flying":
-      return "flyingTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "flyingTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Fire":
-      return "fireTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fireTypeColorLight textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Fighting":
-      return "fightingTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fightingTypeColorLight textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Fairy":
-      return "fairyTypeColorLight textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fairyTypeColorLight textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Electric":
-      return "electricTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "electricTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Dragon":
-      return "dragonTypeColorLight textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "dragonTypeColorLight textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Dark":
-      return "darkTypeColorLight textColorDarkGray border-white whiteShadow whiteShadowAnimate";
+      return "darkTypeColorLight textColorDarkGray border-white whiteShadow shadowAnimate";
 
     case "Bug":
-      return "bugTypeColorLight textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "bugTypeColorLight textColorDarkGray border-black whiteShadow shadowAnimate";
 
     default:
-      return "bg-[#ff90e8] border-black whiteShadow whiteShadowAnimate";
+      return "bg-[#ff90e8] border-black whiteShadow shadowAnimate";
   }
 }
 
 function buttonL(theme) {
   switch (theme) {
     case "Home":
-      return "bgColorDark hover:bg-black textColorLightGray  whiteShadow whiteShadowAnimate";
+      return "bgColorDark hover:bg-black textColorLightGray  whiteShadow shadowAnimate";
 
     case "Water":
-      return "waterTypeColorDark textColorDarkGray hover:border-black border-[rgb(36,36,35)] whiteShadow whiteShadowAnimate";
+      return "waterTypeColorDark textColorDarkGray hover:border-black border-[rgb(36,36,35)] whiteShadow shadowAnimate";
 
     case "Steel":
-      return "steelTypeColorDark textColorDarkGray whiteShadow whiteShadowAnimate border-black";
+      return "steelTypeColorDark textColorDarkGray whiteShadow shadowAnimate border-black";
 
     case "Rock":
-      return "rockTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+      return "rockTypeColorDark textColorLightGray whiteShadow shadowAnimate border-black";
 
     case "Psychic":
-      return "psychicTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "psychicTypeColorDark textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Poison":
-      return "poisonTypeColorDark textColorDarkGray whiteShadow whiteShadowAnimate border-black";
+      return "poisonTypeColorDark textColorDarkGray whiteShadow shadowAnimate border-black";
 
     case "Normal":
-      return "normalTypeColorDark textColorDarkGray border-black whiteShadowAnimate whiteShadow  ";
+      return "normalTypeColorDark textColorDarkGray border-black shadowAnimate whiteShadow  ";
 
     case "Ice":
-      return "iceTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "iceTypeColorDark textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Ground":
-      return "groundTypeColorDark textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "groundTypeColorDark textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Grass":
-      return "grassTypeColorDark textColorDarkGray border-black whiteShadow whiteShadowAnimate";
+      return "grassTypeColorDark textColorDarkGray border-black whiteShadow shadowAnimate";
 
     case "Ghost":
-      return "ghostTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+      return "ghostTypeColorDark textColorLightGray whiteShadow shadowAnimate border-black";
 
     case "Flying":
-      return "flyingTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate ";
+      return "flyingTypeColorDark textColorLightGray border-black whiteShadow shadowAnimate ";
 
     case "Fire":
-      return "fireTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fireTypeColorDark textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Fighting":
-      return "fightingTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fightingTypeColorDark textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Fairy":
-      return "fairyTypeColorDark textColorLightGray border-black whiteShadow whiteShadowAnimate";
+      return "fairyTypeColorDark textColorLightGray border-black whiteShadow shadowAnimate";
 
     case "Electric":
-      return "electricTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "electricTypeColorDark textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Dragon":
-      return "dragonTypeColorDark textColorDarkGray border-black blackShadow blackShadowAnimate";
+      return "dragonTypeColorDark textColorDarkGray border-black blackShadow shadowAnimate";
 
     case "Dark":
-      return "darkTypeColorDark textColorLightGray border-white whiteShadow whiteShadowAnimate";
+      return "darkTypeColorDark textColorLightGray border-white whiteShadow shadowAnimate";
 
     case "Bug":
-      return "bugTypeColorDark textColorLightGray whiteShadow whiteShadowAnimate border-black";
+      return "bugTypeColorDark textColorLightGray whiteShadow shadowAnimate border-black";
 
     default:
-      return "bg-[rgb(36,36,35)] border-black whiteShadow whiteShadowAnimate";
+      return "bg-[rgb(36,36,35)] border-black whiteShadow shadowAnimate";
   }
 }
 
@@ -557,6 +557,73 @@ function inputSeachIconTheme(theme) {
     case "pokemon":
       return "#fff";
 
+    case "home":
+      return "#fff";
+
+    case "Water":
+      return "#86a8fc";
+
+    case "Steel":
+      return "#5f756d";
+
+    case "Rock":
+      return "#48180b";
+
+    case "Psychic":
+      return "#a12c68";
+
+    case "Poison":
+      return "#5d2d86";
+
+    case "Normal":
+      return "#77505a";
+
+    case "Ice":
+      return "#87d2f4";
+
+    case "Ground":
+      return "#a9712d";
+
+    case "Grass":
+      return "#137b3d";
+
+    case "Ghost":
+      return "#34326b";
+
+    case "Flying":
+      return "#4a677d";
+
+    case "Fire":
+      return "#aa1e23";
+
+    case "Fighting":
+      return "#984024";
+
+    case "Fairy":
+      return "#971944";
+
+    case "Electric":
+      return "#e3e32b";
+
+    case "Dragon":
+      return "#448a94";
+
+    case "Dark":
+      return "#5b5879";
+
+    case "Bug":
+      return "#1d4a27";
+
+    default:
+      return "#fff";
+  }
+}
+
+function cartIconTheme(theme) {
+  switch (theme) {
+    case "pokemon":
+      return "#fff";
+
     case "Water":
       return "#1452e3";
 
@@ -616,6 +683,73 @@ function inputSeachIconTheme(theme) {
   }
 }
 
+function avatarButton(theme) {
+  switch (theme) {
+    case "pokemon":
+      return "border-[#ff90e8] whiteShadow shadowAnimate";
+
+    case "Home":
+      return "border-[#ff90e8] whiteShadow shadowAnimate";
+
+    case "Water":
+      return " border-[#86a8fc] shadowAnimate whiteShadow";
+
+    case "Steel":
+      return "border-[#43bd85] whiteShadow shadowAnimate";
+
+    case "Rock":
+      return "border-[#8b3f20] whiteShadow shadowAnimate";
+
+    case "Psychic":
+      return "border-[#f91c90] whiteShadow shadowAnimate";
+
+    case "Poison":
+      return "border-[#9a68d9] whiteShadow shadowAnimate";
+
+    case "Normal":
+      return "border-[#ca99a6] shadowAnimate blackShadow";
+
+    case "Ice":
+      return "border-[#d6f1fb] shadowAnimate blackShadow";
+
+    case "Ground":
+      return "border-[#6e481e] shadowAnimate whiteShadow";
+
+    case "Grass":
+      return "border-[#26ca4f] shadowAnimate whiteShadow";
+
+    case "Ghost":
+      return "border-[#906691] shadowAnimate whiteShadow";
+
+    case "Flying":
+      return "border-[#92b2c6] shadowAnimate whiteShadow";
+
+    case "Fire":
+      return "border-[#fc4d5a] shadowAnimate whiteShadow";
+
+    case "Fighting":
+      return "border-[#ee6038] shadowAnimate whiteShadow";
+
+    case "Fairy":
+      return "border-[#ea1369] shadowAnimate whiteShadow";
+
+    case "Electric":
+      return "border-[#fbfa73] shadowAnimate blackShadow";
+
+    case "Dragon":
+      return "border-[#60cbd7] shadowAnimate whiteShadow";
+
+    case "Dark":
+      return "border-[#5b5879] shadowAnimate whiteShadow";
+
+    case "Bug":
+      return "border-[#3b9851] shadowAnimate whiteShadow";
+
+    default:
+      return "border-[#ff90e8] shadowAnimate whiteShadow";
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (!theme) {
     return;
@@ -633,6 +767,8 @@ const useTheme = (theme, variant) => {
   if (variant === "buttonLcolor") return buttonL(theme);
   if (variant === "inputsearch") return inputSearchTheme(theme);
   if (variant === "inputsearchicon") return inputSeachIconTheme(theme);
+  if (variant === "cartIcon") return cartIconTheme(theme);
+  if (variant === "avatarButtonTheme") return avatarButton(theme);
 };
 
 export default useTheme;

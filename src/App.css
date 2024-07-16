@@ -8,6 +8,8 @@
 
 body {
   background-color: #242423;
+  margin: 0;
+  padding: 0;
 }
 
 .priceBox {
@@ -56,11 +58,6 @@ body {
   box-shadow: 0;
 }
 
-.whiteShadowAnimate:hover {
-  transform: translate(-0.25rem, -0.25rem);
-  animation-delay: 24s;
-}
-
 .blackShadow {
   transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
@@ -73,7 +70,7 @@ body {
   box-shadow: 0;
 }
 
-.blackShadowAnimate:hover {
+.shadowAnimate:hover {
   transform: translate(-0.25rem, -0.25rem);
   animation-delay: 24s;
 }
