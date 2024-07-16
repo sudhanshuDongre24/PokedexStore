@@ -750,6 +750,73 @@ function avatarButton(theme) {
   }
 }
 
+function cartButton(theme) {
+  switch (theme) {
+    case "pokemon":
+      return {};
+
+    case "Home":
+      return {};
+
+    case "Water":
+      return {};
+
+    case "Steel":
+      return {};
+
+    case "Rock":
+      return {};
+
+    case "Psychic":
+      return {};
+
+    case "Poison":
+      return {};
+
+    case "Normal":
+      return {};
+
+    case "Ice":
+      return {};
+
+    case "Ground":
+      return {};
+
+    case "Grass":
+      return {};
+
+    case "Ghost":
+      return {};
+
+    case "Flying":
+      return {};
+
+    case "Fire":
+      return {};
+
+    case "Fighting":
+      return {};
+
+    case "Fairy":
+      return {};
+
+    case "Electric":
+      return {};
+
+    case "Dragon":
+      return {};
+
+    case "Dark":
+      return {};
+
+    case "Bug":
+      return {};
+
+    default:
+      return {};
+  }
+}
+
 const useTheme = (theme, variant) => {
   if (!theme) {
     return;
@@ -769,6 +836,7 @@ const useTheme = (theme, variant) => {
   if (variant === "inputsearchicon") return inputSeachIconTheme(theme);
   if (variant === "cartIcon") return cartIconTheme(theme);
   if (variant === "avatarButtonTheme") return avatarButton(theme);
+  if (variant === "cartButtonTheme") return cartButton(theme);
 };
 
 export default useTheme;

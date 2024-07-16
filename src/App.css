@@ -228,7 +228,7 @@ body {
 }
 
 .borderBottomLightGray {
-  border-bottom-color: rgba(221, 221, 221, 0.35);
+  border-bottom-color: #dddddd59;
 }
 
 .borderBottomDarkGray {

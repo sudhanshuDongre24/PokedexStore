@@ -9,6 +9,7 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [cartItems, setCartItems] = useState(1);
   const { id } = useParams();
   const [showOverlay, setShowOverlay] = useState(false);
   const { status, data } = useSelector((state) => state.pokemonData);
@@ -33,6 +34,12 @@ function Header() {
     const avatarButton = isHomePage
       ? useTheme("Home", "avatarButtonTheme")
       : useTheme(theme, "avatarButtonTheme");
+
+    /*  const cartButton = isHomePage
+      ? useTheme("Home", "cartButtonTheme")
+      : useTheme(theme, "cartButtonTheme"); */
+
+    console.log(avatarButton);
 
     return (
       <header className={`sticky top-0 border-solid z-30 ${headerColor} `}>
@@ -74,7 +81,14 @@ function Header() {
               >
                 LogIn
               </Button> */}
-              <Button className="ml-5">
+
+              <Button
+                className="relative whiteShadow shadowAnimate"
+                onClick={() => setCartItems(10)}
+              >
+                <span className="bg-red-700 rounded-full px-[8px] py-[2px] border-solid border-[1px] border-white  absolute text-sm top-[-12px] right-[-10px] text-white  ">
+                  {cartItems}
+                </span>
                 <svg
                   id="Layer_1"
                   data-name="Layer 1"
@@ -90,15 +104,16 @@ function Header() {
                 </svg>
               </Button>
 
-              <button
-                className={` ml-6 w-[55px] h-[55px] m-0 p-0 rounded-full border-[2px] ${avatarButton}`}
+              <Button
+                overRideBasicTheme="true"
+                className={`ml-6 w-[55px] h-[55px] border-solid focus-visible:outline-none border-[2px] rounded-full ${avatarButton}`}
               >
                 <img
                   src="/50994.jpg"
                   alt="avatar Image"
-                  className="rounded-full  "
+                  className="rounded-full"
                 />
-              </button>
+              </Button>
             </div>
           </nav>
         </Container>
