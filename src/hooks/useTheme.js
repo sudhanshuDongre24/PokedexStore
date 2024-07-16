@@ -619,70 +619,6 @@ function inputSeachIconTheme(theme) {
   }
 }
 
-function cartIconTheme(theme) {
-  switch (theme) {
-    case "pokemon":
-      return "#fff";
-
-    case "Water":
-      return "#1452e3";
-
-    case "Steel":
-      return "#5f756d";
-
-    case "Rock":
-      return "#48180b";
-
-    case "Psychic":
-      return "#a12c68";
-
-    case "Poison":
-      return "#5d2d86";
-
-    case "Normal":
-      return "#77505a";
-
-    case "Ice":
-      return "#87d2f4";
-
-    case "Ground":
-      return "#a9712d";
-
-    case "Grass":
-      return "#137b3d";
-
-    case "Ghost":
-      return "#34326b";
-
-    case "Flying":
-      return "#4a677d";
-
-    case "Fire":
-      return "#aa1e23";
-
-    case "Fighting":
-      return "#984024";
-
-    case "Fairy":
-      return "#971944";
-
-    case "Electric":
-      return "#e3e32b";
-
-    case "Dragon":
-      return "#448a94";
-
-    case "Dark":
-      return "#5b5879";
-
-    case "Bug":
-      return "#1d4a27";
-
-    default:
-      return "#fff";
-  }
-}
-
 function avatarButton(theme) {
   switch (theme) {
     case "pokemon":
@@ -753,67 +689,40 @@ function avatarButton(theme) {
 function cartButton(theme) {
   switch (theme) {
     case "pokemon":
-      return {};
-
     case "Home":
-      return {};
-
     case "Water":
-      return {};
-
     case "Steel":
-      return {};
-
     case "Rock":
-      return {};
-
     case "Psychic":
-      return {};
-
     case "Poison":
-      return {};
+    case "Ground":
+    case "Grass":
+    case "Ghost":
+    case "Flying":
+    case "Fire":
+    case "Fighting":
+    case "Fairy":
+    case "Dragon":
+    case "Dark":
+    case "Bug":
+      return {
+        cartIconFillColor: "#fff",
+        cartButtonColor: "whiteShadow shadowAnimate",
+      };
 
     case "Normal":
-      return {};
-
     case "Ice":
-      return {};
-
-    case "Ground":
-      return {};
-
-    case "Grass":
-      return {};
-
-    case "Ghost":
-      return {};
-
-    case "Flying":
-      return {};
-
-    case "Fire":
-      return {};
-
-    case "Fighting":
-      return {};
-
-    case "Fairy":
-      return {};
-
     case "Electric":
-      return {};
-
-    case "Dragon":
-      return {};
-
-    case "Dark":
-      return {};
-
-    case "Bug":
-      return {};
+      return {
+        cartIconFillColor: "#000",
+        cartButtonColor: "border-black blackShadow shadowAnimate",
+      };
 
     default:
-      return {};
+      return {
+        cartIconFillColor: "#fff",
+        cartButtonColor: "whiteShadow shadowAnimate",
+      };
   }
 }
 
@@ -834,7 +743,6 @@ const useTheme = (theme, variant) => {
   if (variant === "buttonLcolor") return buttonL(theme);
   if (variant === "inputsearch") return inputSearchTheme(theme);
   if (variant === "inputsearchicon") return inputSeachIconTheme(theme);
-  if (variant === "cartIcon") return cartIconTheme(theme);
   if (variant === "avatarButtonTheme") return avatarButton(theme);
   if (variant === "cartButtonTheme") return cartButton(theme);
 };
