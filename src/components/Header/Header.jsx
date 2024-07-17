@@ -70,17 +70,22 @@ function Header() {
 
             {/* Button Section */}
             <div className="ml-2 flex items-center justify-center w-fit-content">
-              {/* <Button ariaLabel="SignIn Button" className={`${buttonLColor} `}>
+              <Button
+                onClick={() => navigate("/signin")}
+                ariaLabel="SignIn Button"
+                className={`${buttonLColor} `}
+              >
                 SignIn
               </Button>
               <Button
+                onClick={() => navigate("/login")}
                 ariaLabel="Login Button"
                 className={`ml-6 ${buttonRColor}`}
               >
                 LogIn
-              </Button> */}
+              </Button>
 
-              <Button
+              {/*  <Button
                 className={`relative ${cartButtonColor}`}
                 onClick={() => setCartItems(10)}
               >
@@ -111,7 +116,7 @@ function Header() {
                   alt="avatar Image"
                   className="rounded-full"
                 />
-              </Button>
+              </Button> */}
             </div>
           </nav>
         </Container>
