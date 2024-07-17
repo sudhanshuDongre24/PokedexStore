@@ -40,7 +40,10 @@ function Header() {
       : useTheme(theme, "cartButtonTheme");
 
     return (
-      <header className={`sticky top-0 border-solid z-30 ${headerColor} `}>
+      <header
+        id="header"
+        className={`sticky top-0 border-solid z-30 ${headerColor} `}
+      >
         <Container>
           <nav className="p-8 flex flex-col gap-5 sm:flex-row items-center justify-between w-full  ">
             {/* Logo */}

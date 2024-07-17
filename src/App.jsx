@@ -1,7 +1,7 @@
 import { Header } from "./components";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPokemonData } from "./store/pokemonSlice";
 import supabaseService from "./supabase/supabaseClient";
@@ -20,13 +20,24 @@ const fetchPokemonData = async (dispatch) => {
 };
 
 function App() {
+  let showHeader = true;
+  const location = useLocation();
+  const isSigninPage = location.pathname.includes("/signin");
+  const isLoginPage = location.pathname.includes("/login");
+
+  if (isSigninPage || isLoginPage) {
+    showHeader = false;
+  } else {
+    showHeader = true;
+  }
+
   const dispatch = useDispatch();
   useEffect(() => {
     fetchPokemonData(dispatch);
   }, [dispatch]);
   return (
     <>
-      <Header />
+      {showHeader && <Header />}
       <main>
         <Outlet />
       </main>
