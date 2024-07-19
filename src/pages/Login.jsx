@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../components";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const {
@@ -10,16 +11,24 @@ function Login() {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 
+  const navigate = useNavigate();
+
   function clearField(e) {
     e.preventDefault();
-    let emailElValue = document.getElementById("email")?.value;
-    let passwordElValue = document.getElementById("password")?.value;
+    let emailEl = document.getElementById("email");
+    let passwordEl = document.getElementById("password");
+    emailEl.value = passwordEl.value = "";
   }
 
   return (
     <div className="text-[rgb(221,221,221)]">
       <div>
-        <h1 className="font-headingTop text-center text-5xl my-10">Pokedex</h1>
+        <h1
+          onClick={() => navigate("/")}
+          className="font-headingTop text-center text-5xl my-10 cursor-pointer"
+        >
+          Pokedex
+        </h1>
 
         <div className="sm:w-[500px] w-[320px] border-[2px] rounded-3xl border-solid  border-[rgba(221,221,221,0.35)] mx-auto p-5">
           <img
@@ -38,26 +47,46 @@ function Login() {
             <label htmlFor="email">Email</label>
 
             <Input
+              onFocus={(e) => e.preventDefault()}
               id="email"
               label="email"
               type="email"
               placeholder="Enter your Email address..."
-              className="mb-4 text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px] "
+              register={register}
+              required
+              className="mb-1 text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px] "
             />
+            {errors.email?.type === "required" && (
+              <p className="text-red-600 pl-3">⚠ Email is required</p>
+            )}
 
-            <label htmlFor="password" className="inline">
-              Password
-            </label>
+            <div className="flex justify-between items-center mt-4">
+              <label htmlFor="password" className="">
+                Password
+              </label>
+              <a className="text-blue-500 hover:text-blue-800">
+                Forget Password?
+              </a>
+            </div>
 
             <Input
               id="password"
               label="password"
               type="password"
               placeholder="Enter your password...."
-              className="mb-6  text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px]"
+              register={register}
+              required
+              className="mb-1  text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px]"
             />
+            {errors.password?.type === "required" && (
+              <p className="text-red-600 pl-3">⚠ Password is required</p>
+            )}
 
-            <Button className="bg-[#ff90e8] textColorDarkGray text-lg whiteShadow shadowAnimate hover:border-[rgba(36,36,35)]">
+            <Button
+              type="submit"
+              onClick={handleSubmit(onSubmit)}
+              className="bg-[#ff90e8] textColorDarkGray text-lg whiteShadow shadowAnimate hover:border-[rgba(36,36,35)] mt-6"
+            >
               Login
             </Button>
             <Button
@@ -70,8 +99,21 @@ function Login() {
 
           <div>
             <p className="text-center">
-              Don't have an account?
-              <span className="text-blue-500"> Register!</span>
+              Don&#39; t have an account?
+              <span
+                onClick={() => navigate("/signin")}
+                className="text-blue-500 hover:text-blue-800 hover:cursor-pointer"
+              >
+                {" "}
+                Register!
+              </span>
+            </p>
+
+            <p
+              onClick={() => navigate("/")}
+              className="text-center mt-4 hover:underline hover:cursor-pointer hover:scale-110"
+            >
+              ⬅ Back to Home
             </p>
           </div>
         </div>
@@ -81,65 +123,3 @@ function Login() {
 }
 
 export default Login;
-
-/* 
-
-
-  return (
-    <div className="text-[rgb(221,221,221)]">
-      
-
-      <div className="p-5 md:p-20 ">
-        <h1 className="font-headingTop text-5xl text-center">PokeDex</h1>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className=" flex justify-center flex-col border-[1px] border-[rgba(221,221,221,0.35)] mt-10 w-fit mx-auto p-5 rounded gap-3 "
-        >
-          <img
-            src="/pngegg.png"
-            alt=""
-            className="w-[50px] h-[50px] mx-auto "
-          />
-          <h2 className="text-3xl text-center mb-10">Log In</h2>
-          <label className="text-xl" htmlFor="email">
-            Email
-          </label>
-          <Input
-            id="email"
-            label="email"
-            type="email"
-            placeholder="Enter your Email"
-            register={register}
-            required
-            className="border-[2px] border-solid w-fit md:w-[500px] text-black rounded focus:border-[3px] text-xl"
-          />
-          {errors.email?.type === "required" && (
-            <p className="text-red-600 pl-3">⚠ Email is required</p>
-          )}
-          <label className="text-xl" htmlFor="password">
-            Password
-          </label>
-          <Input
-            id="password"
-            label="password"
-            type="password"
-            placeholder="Enter your Password"
-            register={register}
-            required
-            className="border-[2px] border-solid w-fit md:w-[500px] text-black rounded focus:border-[3px] text-xl"
-          />
-          {errors.password?.type === "required" && (
-            <p className="text-red-600 pl-3">⚠ Password is required</p>
-          )}{" "}
-          
-          <div className="mt-5"></div>
-          <Button type="submit">Sign In</Button>
-          <Button onClick={clearField}>Clear</Button>
-        </form>
-      </div>
-    </div>
-  );
-}
-
-*/

@@ -14,6 +14,7 @@ import RankingComponent from "./RankingComponent/RankingComponent";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import CommentSection from "./CommentSection/CommentSection";
 import ImageComponent from "./ImageComponent/ImageComponent";
+import InputFieldComponent from "./InputFieldComponent/InputFieldComponent";
 
 export {
   Header,
@@ -32,4 +33,5 @@ export {
   ProductDetails,
   CommentSection,
   ImageComponent,
+  InputFieldComponent,
 };
