@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 function Input({
   placeholder = "",
@@ -9,9 +9,14 @@ function Input({
   onKeyDown,
   value,
   props,
+  required,
+  register,
+  label,
+  id,
 }) {
   return (
     <input
+      id={id}
       value={value}
       placeholder={placeholder}
       type={type}
@@ -19,6 +24,7 @@ function Input({
       onFocus={onFocus}
       onKeyDown={onKeyDown}
       className={` h-10  px-3 py-6  border-[1px] focus:border-2 rounded focus-visible:outline-none ${className}`}
+      {...(register ? register(label, { required }) : {})}
       {...props}
     />
   );

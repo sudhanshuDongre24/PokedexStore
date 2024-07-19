@@ -59,14 +59,26 @@ body {
 }
 
 .blackShadow {
-  transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out !important;
 }
 
 .blackShadow:hover {
-  box-shadow: 0.3rem 0.3rem 0 rgba(36, 36, 35, 1);
+  box-shadow: 0.3rem 0.3rem 0 rgba(36, 36, 35, 1) !important;
 }
 
 .blackShadow:active {
+  box-shadow: 0;
+}
+
+.darkBlackShadow {
+  transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out !important;
+}
+
+.darkBlackShadow:hover {
+  box-shadow: 0.3rem 0.3rem 0 rgba(0, 0, 0, 1) !important;
+}
+
+.darkBlackShadow:active {
   box-shadow: 0;
 }
 
