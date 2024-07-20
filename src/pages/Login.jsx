@@ -53,18 +53,26 @@ function Login() {
               type="email"
               placeholder="Enter your Email address..."
               register={register}
+              validate={{
+                matchPatern: (value) =>
+                  /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                  "⚠ Email address must be a valid address",
+              }}
               required
               className="mb-1 text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px] "
             />
             {errors.email?.type === "required" && (
               <p className="text-red-600 pl-3">⚠ Email is required</p>
             )}
+            {errors.email?.type === "matchPatern" && (
+              <p className="text-red-600 pl-3">{errors?.email?.message}</p>
+            )}
 
             <div className="flex justify-between items-center mt-4">
               <label htmlFor="password" className="">
                 Password
               </label>
-              <a className="text-blue-500 hover:text-blue-800">
+              <a className="text-blue-500 hover:text-blue-800 cursor-pointer">
                 Forget Password?
               </a>
             </div>
@@ -76,10 +84,17 @@ function Login() {
               placeholder="Enter your password...."
               register={register}
               required
+              minLength="8"
+              maxLength="24"
               className="mb-1  text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px]"
             />
             {errors.password?.type === "required" && (
               <p className="text-red-600 pl-3">⚠ Password is required</p>
+            )}
+            {errors.password?.type === "minLength" && (
+              <p className="text-red-600 pl-3">
+                ⚠ Length Should be greater than 8 Character
+              </p>
             )}
 
             <Button

@@ -13,7 +13,15 @@ function Input({
   register,
   label,
   id,
+  validate,
+  minLength,
+  maxLength,
 }) {
+  const requiredOptions = { required };
+  if (validate !== undefined) requiredOptions.validate = validate;
+  if (minLength !== undefined) requiredOptions.minLength = minLength;
+  if (maxLength !== undefined) requiredOptions.maxLength = maxLength;
+
   return (
     <input
       id={id}
@@ -24,7 +32,7 @@ function Input({
       onFocus={onFocus}
       onKeyDown={onKeyDown}
       className={` h-10  px-3 py-6  border-[1px] focus:border-2 rounded focus-visible:outline-none ${className}`}
-      {...(register ? register(label, { required }) : {})}
+      {...(register ? register(label, requiredOptions) : {})}
       {...props}
     />
   );
