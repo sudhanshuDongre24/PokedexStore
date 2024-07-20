@@ -15,9 +15,17 @@ function Login() {
 
   function clearField(e) {
     e.preventDefault();
-    let emailEl = document.getElementById("email");
-    let passwordEl = document.getElementById("password");
+    const emailEl = document.getElementById("email");
+    const passwordEl = document.getElementById("password");
     emailEl.value = passwordEl.value = "";
+  }
+
+  function passwordVisible(e) {
+    e.preventDefault();
+    const passwordEl = document.getElementById("password");
+    passwordEl.type === "password"
+      ? (passwordEl.type = "text")
+      : (passwordEl.type = "password");
   }
 
   return (
@@ -42,7 +50,7 @@ function Login() {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-2 my-5"
+            className="flex flex-col gap-2 my-5 relative"
           >
             <label htmlFor="email">Email</label>
 
@@ -88,6 +96,12 @@ function Login() {
               maxLength="24"
               className="mb-1  text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px]"
             />
+            <a
+              className="absolute top-[46%] bg-black rounded-full  left-[94%] "
+              onClick={passwordVisible}
+            >
+              👁
+            </a>
             {errors.password?.type === "required" && (
               <p className="text-red-600 pl-3">⚠ Password is required</p>
             )}
