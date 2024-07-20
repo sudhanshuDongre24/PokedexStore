@@ -74,11 +74,11 @@ function Header() {
             {/* Button Section */}
             <div className="ml-2 flex items-center justify-center w-fit-content">
               <Button
-                onClick={() => navigate("/signin")}
+                onClick={() => navigate("/signup")}
                 ariaLabel="SignIn Button"
                 className={`${buttonLColor} `}
               >
-                SignIn
+                Signup
               </Button>
               <Button
                 onClick={() => navigate("/login")}

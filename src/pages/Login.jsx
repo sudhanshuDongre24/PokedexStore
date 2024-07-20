@@ -53,13 +53,13 @@ function Login() {
               type="email"
               placeholder="Enter your Email address..."
               register={register}
+              required
+              className="mb-1 text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px] "
               validate={{
                 matchPatern: (value) =>
                   /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                   "⚠ Email address must be a valid address",
               }}
-              required
-              className="mb-1 text-[rgb(36,36,35)] focus:border-[#ff90e8] border-[2px] border-solid focus:border-[3px] "
             />
             {errors.email?.type === "required" && (
               <p className="text-red-600 pl-3">⚠ Email is required</p>

@@ -22,10 +22,10 @@ const fetchPokemonData = async (dispatch) => {
 function App() {
   let showHeader = true;
   const location = useLocation();
-  const isSigninPage = location.pathname.includes("/signin");
+  const isSignupPage = location.pathname.includes("/signup");
   const isLoginPage = location.pathname.includes("/login");
 
-  if (isSigninPage || isLoginPage) {
+  if (isSignupPage || isLoginPage) {
     showHeader = false;
   } else {
     showHeader = true;
