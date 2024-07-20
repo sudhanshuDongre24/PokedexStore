@@ -21,8 +21,8 @@ function Login() {
   }
 
   return (
-    <div className="text-[rgb(221,221,221)]">
-      <div>
+    <div className="text-[rgb(221,221,221)] flex h-[100vh] overflow-hidden">
+      <div className="flex-[1] overflow-y-scroll">
         <h1
           onClick={() => navigate("/")}
           className="font-headingTop text-center text-5xl my-10 cursor-pointer"
@@ -132,6 +132,10 @@ function Login() {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="flex-[1] hidden lg:block">
+        <img src="/pngegg.png" alt="" className="h-[100vh] bg-cover" />
       </div>
     </div>
   );
