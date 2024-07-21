@@ -1,7 +1,7 @@
 import { Header } from "./components";
 import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addPokemonData } from "./store/pokemonSlice";
 import supabaseService from "./supabase/supabaseClient";
@@ -20,8 +20,9 @@ const fetchPokemonData = async (dispatch) => {
 };
 
 function App() {
-  let showHeader = true;
+  const dispatch = useDispatch();
   const location = useLocation();
+  let showHeader = true;
   const isSignupPage = location.pathname.includes("/signup");
   const isLoginPage = location.pathname.includes("/login");
 
@@ -31,7 +32,6 @@ function App() {
     showHeader = true;
   }
 
-  const dispatch = useDispatch();
   useEffect(() => {
     fetchPokemonData(dispatch);
   }, [dispatch]);
