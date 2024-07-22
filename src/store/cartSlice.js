@@ -11,7 +11,7 @@ const cartSlice = createSlice({
   reducers: {
     addCartData: (state, action) => {
       state.cartItem = action.payload;
-      state.length = state.cartItem.length;
+      state.length = Object.keys(state.cartItem).length;
     },
   },
 });

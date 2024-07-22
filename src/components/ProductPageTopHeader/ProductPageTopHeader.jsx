@@ -1,12 +1,25 @@
 import React from "react";
 import { Container, Button, Tooltip, PriceBox } from "../";
 import useTheme from "../../hooks/useTheme";
+import addToCart from "../../hooks/AddToCart";
+import { useDispatch, useSelector } from "react-redux";
+import { addCartData } from "../../store/cartSlice";
 
-function ProductPageTopHeader({ name, speed, type }) {
+function ProductPageTopHeader({ name, speed, type, id }) {
+  const dispatch = useDispatch();
   const cartButtonColor = useTheme(type[0], "cartbutton");
   const productHeaderBgColor = useTheme(type[0], "productpagebgcolor");
   const headerBorderColor = useTheme(type[0], "headerbordercolor");
   const priceBoxColor = useTheme(type[0], "priceboxcolor");
+
+  const cartItem = useSelector((state) => state.pokemonCart.cartItem);
+
+  let newCart = {};
+
+  function addToPokemonCart(id, name, newCart) {
+    newCart[id] = name;
+    dispatch(addCartData({ ...newCart, ...cartItem }));
+  }
 
   return (
     <header
@@ -26,7 +39,10 @@ function ProductPageTopHeader({ name, speed, type }) {
         </div>
         <div className="flex justify-between text-center items-center gap-2">
           <span>⭐⭐⭐⭐⭐ 7 rating</span>
-          <Button className={`font-medium ${cartButtonColor}`}>
+          <Button
+            className={`font-medium ${cartButtonColor}`}
+            onClick={() => addToPokemonCart(id, name, newCart)}
+          >
             Add to cart
           </Button>
         </div>

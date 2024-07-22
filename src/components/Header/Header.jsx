@@ -9,10 +9,12 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [cartItems, setCartItems] = useState(1);
   const { id } = useParams();
   const [showOverlay, setShowOverlay] = useState(false);
   const { status, data } = useSelector((state) => state.pokemonData);
+  const { length: cartItemQuantity } = useSelector(
+    (state) => state.pokemonCart
+  );
   const isHomePage = !location.pathname.includes("/pokemon");
 
   if (status) {
@@ -73,7 +75,7 @@ function Header() {
 
             {/* Button Section */}
             <div className="ml-2 flex items-center justify-center w-fit-content">
-              <Button
+              {/* <Button
                 onClick={() => navigate("/signup")}
                 ariaLabel="SignIn Button"
                 className={`${buttonLColor} `}
@@ -87,13 +89,10 @@ function Header() {
               >
                 LogIn
               </Button>
-
-              {/*  <Button
-                className={`relative ${cartButtonColor}`}
-                onClick={() => setCartItems(10)}
-              >
+ */}
+              <Button className={`relative ${cartButtonColor}`}>
                 <span className="bg-red-600 rounded-full px-[8px] py-[2px] border-solid border-[1px] border-white  absolute text-sm top-[-12px] right-[-10px] text-white  ">
-                  {cartItems}
+                  {cartItemQuantity}
                 </span>
                 <svg
                   id="Layer_1"
@@ -109,7 +108,6 @@ function Header() {
                   />
                 </svg>
               </Button>
-
               <Button
                 overRideBasicTheme="true"
                 className={`ml-6 w-[55px] h-[55px] border-solid focus-visible:outline-none border-[2px] rounded-full ${avatarButton}`}
@@ -119,7 +117,7 @@ function Header() {
                   alt="avatar Image"
                   className="rounded-full"
                 />
-              </Button> */}
+              </Button>{" "}
             </div>
           </nav>
         </Container>
