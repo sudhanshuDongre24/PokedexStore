@@ -3,7 +3,15 @@ import ReactDOM, { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home, NotFound, ProductPage, Profile, Login, Signup } from "./pages";
+import {
+  Home,
+  NotFound,
+  ProductPage,
+  Profile,
+  Login,
+  Signup,
+  Cart,
+} from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 
@@ -35,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
