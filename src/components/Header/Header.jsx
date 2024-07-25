@@ -90,7 +90,10 @@ function Header() {
                 LogIn
               </Button>
  */}
-              <Button className={`relative ${cartButtonColor}`}>
+              <Button
+                onClick={() => navigate("/cart")}
+                className={`relative ${cartButtonColor}`}
+              >
                 <span className="bg-red-600 rounded-full px-[8px] py-[2px] border-solid border-[1px] border-white  absolute text-sm top-[-12px] right-[-10px] text-white  ">
                   {cartItemQuantity}
                 </span>
