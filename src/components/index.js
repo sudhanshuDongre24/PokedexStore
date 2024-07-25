@@ -15,6 +15,7 @@ import ProductDetails from "./ProductDetails/ProductDetails";
 import CommentSection from "./CommentSection/CommentSection";
 import ImageComponent from "./ImageComponent/ImageComponent";
 import InputFieldComponent from "./InputFieldComponent/InputFieldComponent";
+import CartCard from "./CartCard/CartCard";
 
 export {
   Header,
@@ -34,4 +35,5 @@ export {
   CommentSection,
   ImageComponent,
   InputFieldComponent,
+  CartCard,
 };

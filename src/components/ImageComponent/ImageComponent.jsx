@@ -2,9 +2,10 @@ import React from "react";
 import { ImageLoader } from "image-loader-spinner";
 import useTheme from "../../hooks/useTheme";
 
-function ImageComponent({ className = "", altText, id, type }) {
+function ImageComponent({ className = "", altText = "", id, type }) {
   ImageLoader("/pngegg.png", 200);
   const bgColor = useTheme(type, "bgcolor");
+
   return (
     <>
       <img
