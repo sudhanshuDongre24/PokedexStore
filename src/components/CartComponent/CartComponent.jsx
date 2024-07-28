@@ -1,23 +1,24 @@
-import React from "react";
-import ImageComponent from "../ImageComponent/ImageComponent";
-import { Container } from "../";
+import React, { useState } from "react";
+import { Container } from "..";
 
 function CartCard(cartItems) {
-  const cartItemList = Object.values(cartItems);
-  console.log(cartItemList);
+  const list = Object.values(cartItems);
+  const [cartItemList, setCartItemList] = useState(list);
 
   function changeUp(id) {
+    let a = cartItemList.findIndex((item) => item.id == id);
+    cartItemList[a].hp = cartItemList[a].hp + 1;
+    updateCartListItem();
+  }
+
+  function changeDown(id) {
     let a = cartItemList.findIndex((item) => item.id == id);
     cartItemList[a].hp = cartItemList[a].hp - 1;
     updateCartListItem();
   }
 
-  function changeDown(id) {
-    console.log(id);
-  }
-
   function updateCartListItem() {
-    console.log(cartItemList);
+    setCartItemList([...cartItemList]);
   }
 
   return (
@@ -29,6 +30,7 @@ function CartCard(cartItems) {
             {cartItemList?.map((item) => (
               <div key={item.name} className="flex gap-5">
                 <h3>{item.name}</h3>
+                <p>{item.hp}</p>
                 <button className="border-2" onClick={() => changeUp(item.id)}>
                   Up
                 </button>

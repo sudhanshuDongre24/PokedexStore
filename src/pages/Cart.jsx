@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, CartCard, Container } from "../components";
+import { Button, CartComponent, Container } from "../components";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -18,11 +18,22 @@ function Cart() {
     cartItems.push(pokemonData);
   });
 
-  return (
-    <div>
-      <CartCard {...cartItems} />
-    </div>
-  );
+  if (length == 0) {
+    return (
+      <div className="mt-20 textColorLightGray  flex item-center flex-col gap-5 justify-center">
+        <h2 className="text-center text-3xl">Cart Is Empty</h2>
+        <Button onClick={() => navigate("/")} className="mx-auto">
+          Back to Home Page
+        </Button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <CartComponent {...cartItems} />
+      </div>
+    );
+  }
 }
 
 export default Cart;
