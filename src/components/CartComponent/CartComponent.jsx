@@ -125,9 +125,51 @@ function CartCard(cartItems) {
                 </div>
               ))}
             </div>
-            <div className="flex-1 border-[1px] border-solid border-rgba(221,221,221,0.35) rounded bg-black h-[200px]">
-              Proced
-              <h2>Hell0</h2>
+            <div className="flex-1 border-[1px] border-solid border-rgba(221,221,221,0.35) rounded bg-black h-fit p-5">
+              <h2 className="text-2xl mt-5 text-center">Bill Counter</h2>
+
+              <div className="grid grid-cols-4 justify-center p-4 mt-2">
+                <h3 className="font-bold text-center">Name</h3>
+                <h3 className="font-bold  text-center">Price</h3>
+                <h3 className="font-bold  text-center">Quantity</h3>
+                <h3 className="font-bold  text-center">Total</h3>
+              </div>
+
+              {cartItemList?.map((item) => (
+                <div
+                  key={item.name}
+                  className="grid grid-cols-4 justify-center p-4 my-2"
+                >
+                  <p className="text-center">{item.name}</p>
+                  <p className="text-center">{item.speed}</p>
+                  <p className="text-center">{item.itemsToBuy}</p>
+                  <p className="text-center">{item.speed * item.itemsToBuy}</p>
+                </div>
+              ))}
+
+              <hr className="mx-5" />
+
+              <div className="px-10 my-4 flex justify-between">
+                <p className="font-bold font-xl">Total:</p>
+                <h3 className="italic">
+                  {" "}
+                  $
+                  {cartItemList?.reduce(
+                    (sum, item) => sum + item.speed * item.itemsToBuy,
+                    0
+                  )}
+                </h3>
+              </div>
+              <hr className="mx-5" />
+
+              <div className="mt-4">
+                <Button className="w-full  whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray">
+                  Buy
+                </Button>
+                <Button className="w-full my-5 whiteShadow shadowAnimate">
+                  Cancel
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
