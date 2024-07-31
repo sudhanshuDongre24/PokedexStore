@@ -11,6 +11,7 @@ function CartCard(cartItems) {
     item.itemsToBuy = 1;
   });
   const [cartItemList, setCartItemList] = useState(list);
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
   function changeUp(id) {
@@ -166,13 +167,35 @@ function CartCard(cartItems) {
                 <Button className="w-full  whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray">
                   Buy
                 </Button>
-                <Button className="w-full my-5 whiteShadow shadowAnimate">
+                <Button
+                  onClick={() => setShowModal(true)}
+                  className="w-full my-5 whiteShadow shadowAnimate"
+                >
                   Cancel
                 </Button>
               </div>
             </div>
           </div>
         </Container>
+        {showModal && (
+          <div
+            className="min-h-screen absolute  top-0 z-[5000] bg-[rgba(0,0,0,0.9)] w-full flex items-center justify-center "
+            onClick={() => setShowModal(false)}
+          >
+            <div className="border-[1px] border-[rgba(221,221,221,0.35)] bg-[rgb(36,36,35)] textColorLightGray w-fit flex  flex-col rounded p-10 ">
+              <h3 className="text-xl">
+                <span className="text-red-500">⚠</span> Are you sure you want to
+                remove all items from the cart!
+              </h3>
+              <div className="mt-6 flex gap-4 justify-end">
+                <Button className="whiteShadow shadowAnimate">Cancel</Button>
+                <Button className="whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray">
+                  Remove
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     );
   }
