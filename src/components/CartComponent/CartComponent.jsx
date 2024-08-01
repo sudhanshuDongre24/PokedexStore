@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Container, ImageComponent } from "..";
 import { useNavigate } from "react-router-dom";
+import { addCartData } from "../../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function CartCard(cartItems) {
   const list = Object.values(cartItems);
@@ -12,17 +14,18 @@ function CartCard(cartItems) {
   });
   const [cartItemList, setCartItemList] = useState(list);
   const [showModal, setShowModal] = useState(false);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
   function changeUp(id) {
-    let a = cartItemList.findIndex((item) => item.id == id);
+    let a = cartItemList?.findIndex((item) => item.id == id);
     if (cartItemList[a].items <= cartItemList[a].itemsToBuy) return;
     cartItemList[a].itemsToBuy = cartItemList[a].itemsToBuy + 1;
     updateCartListItem();
   }
 
   function changeDown(id) {
-    let a = cartItemList.findIndex((item) => item.id == id);
+    let a = cartItemList?.findIndex((item) => item.id == id);
     if (cartItemList[a].itemsToBuy == 1) return;
     cartItemList[a].itemsToBuy = cartItemList[a].itemsToBuy - 1;
     updateCartListItem();
@@ -34,12 +37,23 @@ function CartCard(cartItems) {
     if (index !== -1) {
       cartItemList.splice(index, 1);
     }
-
     updateCartListItem();
+    updatePokemonCart();
   }
 
   function updateCartListItem() {
     setCartItemList([...cartItemList]);
+  }
+
+  function removeAllCartItems() {
+    setCartItemList([]);
+    dispatch(addCartData({}));
+  }
+
+  function updatePokemonCart() {
+    const cart = {};
+    cartItemList?.map((item) => (cart[item.id] = item.name));
+    dispatch(addCartData({ ...cart }));
   }
 
   if (cartItemList.length === 0) {
@@ -179,7 +193,7 @@ function CartCard(cartItems) {
         </Container>
         {showModal && (
           <div
-            className="min-h-screen absolute  top-0 z-[5000] bg-[rgba(0,0,0,0.9)] w-full flex items-center justify-center "
+            className="h-[100vh] absolute  top-0 bottom-0 z-[5000] bg-[rgba(0,0,0,0.9)] w-full flex items-center justify-center "
             onClick={() => setShowModal(false)}
           >
             <div className="border-[1px] border-[rgba(221,221,221,0.35)] bg-[rgb(36,36,35)] textColorLightGray w-fit flex  flex-col rounded p-10 ">
@@ -189,7 +203,10 @@ function CartCard(cartItems) {
               </h3>
               <div className="mt-6 flex gap-4 justify-end">
                 <Button className="whiteShadow shadowAnimate">Cancel</Button>
-                <Button className="whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray">
+                <Button
+                  onClick={() => removeAllCartItems()}
+                  className="whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray"
+                >
                   Remove
                 </Button>
               </div>
