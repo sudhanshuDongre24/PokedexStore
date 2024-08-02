@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, ImageComponent } from "..";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { addCartData } from "../../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { addPokemonData } from "../../store/pokemonSlice";
@@ -15,6 +15,7 @@ function CartCard(cartItems) {
   });
   const [cartItemList, setCartItemList] = useState(list);
   const [showModal, setShowModal] = useState(false);
+  const [showBuyModal, setShowBuyModal] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data } = useSelector((state) => state.pokemonData);
@@ -65,7 +66,10 @@ function CartCard(cartItems) {
       dataToUpdate[id - 1].items -= cartItemList[index].itemsToBuy;
     });
     dispatch(addPokemonData([...dataToUpdate]));
-    removeAllCartItems();
+    setCartItemList([]);
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
   }
 
   if (cartItemList.length === 0) {
@@ -191,7 +195,9 @@ function CartCard(cartItems) {
 
               <div className="mt-4">
                 <Button
-                  onClick={() => procedToBuy()}
+                  onClick={() => {
+                    procedToBuy();
+                  }}
                   className="w-full  whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray"
                 >
                   Buy
