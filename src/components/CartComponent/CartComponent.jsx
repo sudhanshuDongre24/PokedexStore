@@ -3,6 +3,7 @@ import { Button, Container, ImageComponent } from "..";
 import { useNavigate } from "react-router-dom";
 import { addCartData } from "../../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { addPokemonData } from "../../store/pokemonSlice";
 
 function CartCard(cartItems) {
   const list = Object.values(cartItems);
@@ -16,6 +17,8 @@ function CartCard(cartItems) {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { data } = useSelector((state) => state.pokemonData);
+  const dataToUpdate = JSON.parse(JSON.stringify(data));
 
   function changeUp(id) {
     let a = cartItemList?.findIndex((item) => item.id == id);
@@ -54,6 +57,15 @@ function CartCard(cartItems) {
     const cart = {};
     cartItemList?.map((item) => (cart[item.id] = item.name));
     dispatch(addCartData({ ...cart }));
+  }
+
+  function procedToBuy() {
+    const pokemonId = cartItemList.map((item) => item.id);
+    pokemonId.forEach((id, index) => {
+      dataToUpdate[id - 1].items -= cartItemList[index].itemsToBuy;
+    });
+    dispatch(addPokemonData([...dataToUpdate]));
+    removeAllCartItems();
   }
 
   if (cartItemList.length === 0) {
@@ -178,7 +190,10 @@ function CartCard(cartItems) {
               <hr className="mx-5" />
 
               <div className="mt-4">
-                <Button className="w-full  whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray">
+                <Button
+                  onClick={() => procedToBuy()}
+                  className="w-full  whiteShadow shadowAnimate bg-[rgb(255,144,232)] textColorDarkGray"
+                >
                   Buy
                 </Button>
                 <Button
