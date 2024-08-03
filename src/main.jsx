@@ -11,6 +11,7 @@ import {
   Login,
   Signup,
   Cart,
+  OrderDone,
 } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/order",
+        element: <OrderDone />,
       },
     ],
   },
