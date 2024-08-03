@@ -19,6 +19,7 @@ function CartCard(cartItems) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data } = useSelector((state) => state.pokemonData);
+  console.log(data);
   const dataToUpdate = JSON.parse(JSON.stringify(data));
 
   function changeUp(id) {
@@ -66,9 +67,11 @@ function CartCard(cartItems) {
       dataToUpdate[id - 1].items -= cartItemList[index].itemsToBuy;
     });
     dispatch(addPokemonData([...dataToUpdate]));
-    setCartItemList([]);
-    setTimeout(() => {
-      navigate("/");
+
+    const timerId = setTimeout(() => {
+      navigate("/order");
+      setCartItemList([]);
+      clearTimeout(timerId);
     }, 1000);
   }
 
