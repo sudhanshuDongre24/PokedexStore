@@ -19,7 +19,6 @@ function CartCard(cartItems) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data } = useSelector((state) => state.pokemonData);
-  console.log(data);
   const dataToUpdate = JSON.parse(JSON.stringify(data));
 
   function changeUp(id) {

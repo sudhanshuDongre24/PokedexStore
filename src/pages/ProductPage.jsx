@@ -16,16 +16,26 @@ import {
 } from "../components";
 import { changeTheme } from "../store/themeSlice";
 import useTheme from "../hooks/useTheme";
+import { addCartData } from "../store/cartSlice";
 
 function ProductPage() {
   const { id } = useParams();
   const { pathname } = useLocation();
   const pokemonData = useSelector((state) => state.pokemonData.data);
   const loadingStatus = useSelector((state) => state.pokemonData.status);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     globalThis.scrollTo(0, 0);
   }, [pathname]);
+
+  const cartItem = useSelector((state) => state.pokemonCart.cartItem);
+
+  let newCart = {};
+
+  function addToPokemonCart(id, name, newCart) {
+    newCart[id] = name;
+    dispatch(addCartData({ ...newCart, ...cartItem }));
+  }
 
   if (loadingStatus) {
     const pokemon = pokemonData?.find((user) => user.id == id);
@@ -37,7 +47,7 @@ function ProductPage() {
 
     return (
       <>
-        <ProductPageTopHeader {...pokemon} />
+        <ProductPageTopHeader {...pokemon} func={addToPokemonCart} />
         <div
           className={` text-inherit py-20 min-h-screen ${productpagebgcolor}`}
         >
@@ -101,7 +111,12 @@ function ProductPage() {
                   <div
                     className={`border-b-[1px] border-solid  p-6 ${borderColor}`}
                   >
-                    <Button className={`w-full ${cartButtonColor} `}>
+                    <Button
+                      onClick={() =>
+                        addToPokemonCart(pokemon.id, pokemon.name, newCart)
+                      }
+                      className={`w-full ${cartButtonColor} `}
+                    >
                       Add to cart
                     </Button>
                     <div className="flex items-center justify-between mt-6 gap-3  ">
