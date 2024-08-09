@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../components";
 import { useNavigate } from "react-router-dom";
+import supabaseService from "../supabase/supabaseClient";
 
 function Login() {
   const {
@@ -9,7 +10,14 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await supabaseService.userLogin(data);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const navigate = useNavigate();
 

@@ -9,13 +9,22 @@ import axios from "axios";
 
 const fetchPokemonData = async (dispatch) => {
   try {
-    const response = await axios.get("/pokemon.json");
-    dispatch(addPokemonData(response.data));
-    // const { data } = await supabaseService.getPokemonData();
-    // // console.log(data);
-    // dispatch(addPokemonData(data[0].data));
+    //const response = await axios.get("/pokemon.json");
+    //dispatch(addPokemonData(response.data));
+    const { data } = await supabaseService.getPokemonData();
+    // console.log(data);
+    dispatch(addPokemonData(data[0].data));
   } catch (error) {
     console.log("Home Component :: fetchPokemonData :: error ", error);
+  }
+};
+
+const getUserSession = async () => {
+  try {
+    const res = await supabaseService.getUser();
+    console.log(res.data);
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -25,6 +34,8 @@ function App() {
   let showHeader = true;
   const isSignupPage = location.pathname.includes("/signup");
   const isLoginPage = location.pathname.includes("/login");
+
+  // getUserSession();
 
   if (isSignupPage || isLoginPage) {
     showHeader = false;

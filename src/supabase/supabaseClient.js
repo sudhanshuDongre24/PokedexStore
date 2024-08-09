@@ -27,6 +27,30 @@ export class Supabase {
       console.log("Supabase Service :: updatePokemon :: error ", error);
     }
   }
+
+  async userLogin(data) {
+    try {
+      return await this.supabase.auth.signInWithPassword(data);
+    } catch (error) {
+      console.log("Supabase Service :: userLogin :: error ", error);
+    }
+  }
+
+  async userSignup(data) {
+    try {
+      return await this.supabase.auth.signUp(data);
+    } catch (error) {
+      console.log("Supabase Service :: userSignup :: error", error);
+    }
+  }
+
+  async getUser() {
+    try {
+      return await this.supabase.auth.getUser();
+    } catch (error) {
+      console.log("Superbase Service :: getUser :: error ", error);
+    }
+  }
 }
 
 const supabaseService = new Supabase();
