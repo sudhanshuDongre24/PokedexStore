@@ -11,11 +11,15 @@ function Header() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [showOverlay, setShowOverlay] = useState(false);
+  const [loginTab, setLoginTab] = useState(false);
   const { status, data } = useSelector((state) => state.pokemonData);
   const { length: cartItemQuantity } = useSelector(
     (state) => state.pokemonCart
   );
   const isHomePage = !location.pathname.includes("/pokemon");
+  function toggleLoginTab() {
+    setLoginTab(!loginTab);
+  }
 
   if (status) {
     const pokemon = data?.find((user) => user.id == id);
@@ -114,12 +118,20 @@ function Header() {
               <Button
                 overRideBasicTheme="true"
                 className={`ml-6 w-[55px] h-[55px] border-solid focus-visible:outline-none border-[2px] rounded-full ${avatarButton}`}
+                onClick={toggleLoginTab}
               >
                 <img
                   src="/50994.jpg"
                   alt="avatar Image"
                   className="rounded-full"
                 />
+                {loginTab && (
+                  <div className="relative">
+                    <div className="border-[1px] border-solid border-black text-black rounded bg-white p-6 absolute top-[20px] right-[-25px]">
+                      Home
+                    </div>
+                  </div>
+                )}
               </Button>{" "}
             </div>
           </nav>
