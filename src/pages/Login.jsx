@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../components";
 import { useNavigate } from "react-router-dom";
@@ -10,12 +10,23 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data) => {
+  const [loginError, setLoginError] = useState(false);
+
+  const onSubmit = async ({ email, password }) => {
     try {
-      const response = await supabaseService.userLogin(data);
-      console.log(response);
+      const { data, error } = await supabaseService.userLogin({
+        email,
+        password,
+      });
+
+      if (error) {
+        setLoginError(true);
+      }
+      if (data.user) {
+        setLoginError(false);
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Login Component :: userLogin :: error ", error);
     }
   };
 
@@ -55,7 +66,11 @@ function Login() {
           mb-4"
           />
           <h2 className="text-center text-2xl">Login</h2>
-
+          {loginError && (
+            <p className="text-center text-red-600 mt-2">
+              ⚠ Invalid login Credentials
+            </p>
+          )}
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-2 my-5 relative"
